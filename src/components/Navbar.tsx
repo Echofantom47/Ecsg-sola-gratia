@@ -44,15 +44,25 @@ const Navbar = () => {
         </a>
 
         <div className="hidden lg:flex items-center gap-1">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="px-3 py-2 text-sm font-medium text-primary-foreground/80 hover:text-gold transition-colors rounded-md hover:bg-primary-foreground/5"
-            >
-              {link.label}
-            </a>
-          ))}
+          {navLinks.map((link) =>
+            link.isRoute ? (
+              <Link
+                key={link.href}
+                to={link.href}
+                className="px-3 py-2 text-sm font-medium text-primary-foreground/80 hover:text-gold transition-colors rounded-md hover:bg-primary-foreground/5"
+              >
+                {link.label}
+              </Link>
+            ) : (
+              <a
+                key={link.href}
+                href={link.href}
+                className="px-3 py-2 text-sm font-medium text-primary-foreground/80 hover:text-gold transition-colors rounded-md hover:bg-primary-foreground/5"
+              >
+                {link.label}
+              </a>
+            )
+          )}
           <a
             href="tel:+22890071065"
             className="ml-3 flex items-center gap-2 bg-gradient-gold text-primary font-semibold px-4 py-2 rounded-full text-sm hover:shadow-gold transition-all"
