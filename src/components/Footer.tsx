@@ -1,0 +1,83 @@
+import { MapPin, Phone, Mail } from "lucide-react";
+import logoEcsg from "@/assets/logo-ecsg.jpg";
+
+const Footer = () => {
+  return (
+    <footer className="bg-gradient-navy-dark pt-16 pb-8">
+      <div className="container mx-auto px-4">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+          {/* Brand */}
+          <div className="lg:col-span-1">
+            <div className="flex items-center gap-3 mb-4">
+              <img src={logoEcsg} alt="Logo ECSG" className="w-12 h-12 rounded-full border-2 border-gold" />
+              <div>
+                <p className="font-display text-sm font-bold text-primary-foreground">École Chrétienne</p>
+                <p className="text-gradient-gold font-display font-bold">Sola Gratia</p>
+              </div>
+            </div>
+            <p className="text-primary-foreground/50 text-sm leading-relaxed mb-4">
+              Institution d'excellence éducative depuis 2002, formant des leaders intègres guidés par les valeurs chrétiennes authentiques.
+            </p>
+            <p className="text-gold/70 italic text-sm font-display">
+              «&nbsp;Par la seule grâce de Dieu, nous accomplissons des exploits remarquables&nbsp;»
+            </p>
+          </div>
+
+          {/* Programs */}
+          <div>
+            <h4 className="font-display font-bold text-primary-foreground mb-4">Nos Programmes</h4>
+            <ul className="space-y-2 text-primary-foreground/50 text-sm">
+              <li>École Maternelle</li>
+              <li>École Primaire</li>
+              <li>Collège d'Excellence</li>
+              <li>Lycée Sola Gratia</li>
+              <li className="text-gold/60">Sections A4, C et D</li>
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h4 className="font-display font-bold text-primary-foreground mb-4">Contact</h4>
+            <ul className="space-y-3 text-primary-foreground/50 text-sm">
+              <li className="flex items-start gap-2">
+                <MapPin className="w-4 h-4 shrink-0 mt-0.5 text-gold/60" />
+                <span>Quartier Yokoé, Lomé<br />République Togolaise</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <Phone className="w-4 h-4 shrink-0 mt-0.5 text-gold/60" />
+                <span>+228 90 07 10 65<br />+228 91 47 74 56</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <Mail className="w-4 h-4 shrink-0 mt-0.5 text-gold/60" />
+                <span>Ecolesolagratia2002@gmail.com</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Values */}
+          <div>
+            <h4 className="font-display font-bold text-primary-foreground mb-4">Nos Valeurs</h4>
+            <ul className="space-y-2 text-primary-foreground/50 text-sm">
+              <li>Excellence Académique</li>
+              <li>Intégrité et Caractère</li>
+              <li>Foi et Spiritualité</li>
+              <li>Leadership et Service</li>
+              <li>Innovation Pédagogique</li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="border-t border-primary-foreground/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-primary-foreground/40 text-sm italic font-display">
+            «&nbsp;Je puis tout par celui qui me fortifie&nbsp;» — Philippiens 4:13
+          </p>
+          <p className="text-primary-foreground/30 text-xs">
+            © 2025 École Chrétienne Sola Gratia. Tous droits réservés.
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
