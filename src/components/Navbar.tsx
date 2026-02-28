@@ -10,7 +10,7 @@ const navLinks = [
   { label: "À Propos", href: "#apropos" },
   { label: "Nos Valeurs", href: "#valeurs" },
   { label: "Programmes", href: "#programmes" },
-  { label: "Galerie", href: "#galerie" },
+  { label: "Galerie", href: "/galerie", isRoute: true },
   { label: "Contact", href: "#contact" },
 ];
 
