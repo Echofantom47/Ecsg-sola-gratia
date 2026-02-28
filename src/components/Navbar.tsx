@@ -90,16 +90,27 @@ const Navbar = () => {
             className="lg:hidden bg-gradient-navy-dark border-t border-primary-foreground/10"
           >
             <div className="container mx-auto px-4 py-4 flex flex-col gap-1">
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setMobileOpen(false)}
-                  className="px-4 py-3 text-primary-foreground/80 hover:text-gold hover:bg-primary-foreground/5 rounded-md transition-colors font-medium"
-                >
-                  {link.label}
-                </a>
-              ))}
+              {navLinks.map((link) =>
+                link.isRoute ? (
+                  <Link
+                    key={link.href}
+                    to={link.href}
+                    onClick={() => setMobileOpen(false)}
+                    className="px-4 py-3 text-primary-foreground/80 hover:text-gold hover:bg-primary-foreground/5 rounded-md transition-colors font-medium"
+                  >
+                    {link.label}
+                  </Link>
+                ) : (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setMobileOpen(false)}
+                    className="px-4 py-3 text-primary-foreground/80 hover:text-gold hover:bg-primary-foreground/5 rounded-md transition-colors font-medium"
+                  >
+                    {link.label}
+                  </a>
+                )
+              )}
               <a
                 href="tel:+22890071065"
                 className="mt-2 flex items-center justify-center gap-2 bg-gradient-gold text-primary font-semibold px-4 py-3 rounded-full text-sm"
