@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone } from "lucide-react";
 import logoEcsg from "@/assets/logo-ecsg.jpg";
@@ -9,7 +10,7 @@ const navLinks = [
   { label: "À Propos", href: "#apropos" },
   { label: "Nos Valeurs", href: "#valeurs" },
   { label: "Programmes", href: "#programmes" },
-  { label: "Galerie", href: "#galerie" },
+  { label: "Galerie", href: "/galerie", isRoute: true },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -43,15 +44,25 @@ const Navbar = () => {
         </a>
 
         <div className="hidden lg:flex items-center gap-1">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="px-3 py-2 text-sm font-medium text-primary-foreground/80 hover:text-gold transition-colors rounded-md hover:bg-primary-foreground/5"
-            >
-              {link.label}
-            </a>
-          ))}
+          {navLinks.map((link) =>
+            link.isRoute ? (
+              <Link
+                key={link.href}
+                to={link.href}
+                className="px-3 py-2 text-sm font-medium text-primary-foreground/80 hover:text-gold transition-colors rounded-md hover:bg-primary-foreground/5"
+              >
+                {link.label}
+              </Link>
+            ) : (
+              <a
+                key={link.href}
+                href={link.href}
+                className="px-3 py-2 text-sm font-medium text-primary-foreground/80 hover:text-gold transition-colors rounded-md hover:bg-primary-foreground/5"
+              >
+                {link.label}
+              </a>
+            )
+          )}
           <a
             href="tel:+22890071065"
             className="ml-3 flex items-center gap-2 bg-gradient-gold text-primary font-semibold px-4 py-2 rounded-full text-sm hover:shadow-gold transition-all"
@@ -79,16 +90,27 @@ const Navbar = () => {
             className="lg:hidden bg-gradient-navy-dark border-t border-primary-foreground/10"
           >
             <div className="container mx-auto px-4 py-4 flex flex-col gap-1">
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setMobileOpen(false)}
-                  className="px-4 py-3 text-primary-foreground/80 hover:text-gold hover:bg-primary-foreground/5 rounded-md transition-colors font-medium"
-                >
-                  {link.label}
-                </a>
-              ))}
+              {navLinks.map((link) =>
+                link.isRoute ? (
+                  <Link
+                    key={link.href}
+                    to={link.href}
+                    onClick={() => setMobileOpen(false)}
+                    className="px-4 py-3 text-primary-foreground/80 hover:text-gold hover:bg-primary-foreground/5 rounded-md transition-colors font-medium"
+                  >
+                    {link.label}
+                  </Link>
+                ) : (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setMobileOpen(false)}
+                    className="px-4 py-3 text-primary-foreground/80 hover:text-gold hover:bg-primary-foreground/5 rounded-md transition-colors font-medium"
+                  >
+                    {link.label}
+                  </a>
+                )
+              )}
               <a
                 href="tel:+22890071065"
                 className="mt-2 flex items-center justify-center gap-2 bg-gradient-gold text-primary font-semibold px-4 py-3 rounded-full text-sm"
