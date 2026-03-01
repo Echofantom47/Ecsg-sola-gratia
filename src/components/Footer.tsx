@@ -71,9 +71,14 @@ const Footer = () => {
           <p className="text-primary-foreground/40 text-sm italic font-display">
             «&nbsp;Je puis tout par celui qui me fortifie&nbsp;» — Philippiens 4:13
           </p>
-          <p className="text-primary-foreground/30 text-xs">
-            © 2025 École Chrétienne Sola Gratia. Tous droits réservés.
-          </p>
+          <div className="text-right">
+            <p className="text-primary-foreground/30 text-xs">
+              © 2025 École Chrétienne Sola Gratia. Tous droits réservés.
+            </p>
+            <p className="text-primary-foreground/30 text-xs mt-1">
+              Développé avec excellence par <span className="text-gold/60 font-semibold">FNT Fantom Network Technologies</span>
+            </p>
+          </div>
         </div>
       </div>
     </footer>
