@@ -9,22 +9,22 @@ const programs = [
   {
     title: "École Maternelle",
     image: maternelleImg,
-    description: "Un environnement sécurisant et stimulant où les tout-petits développent leurs capacités cognitives, sociales et spirituelles dans un cadre bienveillant.",
+    description: "Un cadre d'éveil chaleureux et stimulant où nos tout-petits cultivent curiosité, créativité et premiers apprentissages fondamentaux dans un environnement empreint de bienveillance.",
   },
   {
     title: "École Primaire",
     image: primaireImg,
-    description: "La base fondamentale de la formation académique. Nos élèves acquièrent solidement les compétences en lecture, écriture, mathématiques et sciences.",
+    description: "Le socle de toute réussite académique. Nos élèves acquièrent avec assurance les compétences essentielles en lecture, écriture, mathématiques et découverte scientifique.",
   },
   {
     title: "Collège d'Excellence",
     image: collegeImg,
-    description: "Approfondissement des connaissances et préparation méthodique au Brevet. L'accent est mis sur le développement de l'esprit critique et l'autonomie intellectuelle.",
+    description: "Consolidation des savoirs et préparation méthodique au BEPC. Nous forgeons l'esprit critique, l'autonomie intellectuelle et la discipline nécessaires à la poursuite d'études.",
   },
   {
     title: "Lycée Sola Gratia",
     image: lyceeImg,
-    description: "Formation complète en sections littéraires (A4) et scientifiques (C et D), préparant rigoureusement nos élèves au baccalauréat avec des taux de réussite exceptionnels.",
+    description: "Parcours abouti en séries littéraire (A4) et scientifiques (C & D). Notre encadrement rigoureux conduit nos candidats vers des résultats exceptionnels au Baccalauréat.",
   },
 ];
 
