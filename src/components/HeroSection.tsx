@@ -63,7 +63,7 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.5 }}
             className="text-primary-foreground/60 text-base md:text-lg leading-relaxed mb-10 max-w-2xl"
           >
-            Depuis plus de vingt années d'excellence éducative, nous formons une génération de leaders intègres et compétents, alliant formation académique de haut niveau et valeurs chrétiennes authentiques.
+            Depuis plus de deux décennies, notre institution façonne l'élite de demain en conjuguant excellence académique irréprochable, rigueur morale et ancrage spirituel profond. Chaque élève est accompagné vers la pleine réalisation de son potentiel.
           </motion.p>
 
           <motion.div

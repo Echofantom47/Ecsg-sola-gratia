@@ -61,13 +61,13 @@ const AboutSection = () => {
             className="space-y-6"
           >
             <p className="text-foreground/80 leading-relaxed">
-              Fondée le 16 septembre 2002, l'École Chrétienne Sola Gratia s'impose aujourd'hui comme une référence incontournable dans le paysage éducatif togolais. Située dans le dynamique quartier de Yokoé à Lomé, notre institution privée confessionnelle s'engage depuis plus de vingt années à dispenser une formation d'excellence.
+             Fondée le 16 septembre 2002 par M. DOSSEH Kokou Beaugars, l'École Chrétienne Sola Gratia s'est imposée comme un phare d'excellence dans le paysage éducatif togolais. Implantée au cœur du quartier de Yokoé à Lomé, notre institution confessionnelle privée consacre depuis plus de vingt-trois années son expertise à la formation intégrale de la jeunesse.
             </p>
             <p className="text-foreground/70 leading-relaxed">
-              Notre vision éducative s'articule autour d'une philosophie pédagogique holistique qui intègre harmonieusement l'excellence académique, la formation spirituelle et le développement du caractère.
+              Notre philosophie pédagogique repose sur une approche holistique où rigueur intellectuelle, épanouissement spirituel et développement du caractère se conjuguent harmonieusement pour forger des personnalités d'exception.
             </p>
             <p className="text-foreground/70 leading-relaxed">
-              Les résultats exceptionnels obtenus par nos élèves aux différents examens nationaux témoignent de l'efficacité de notre approche pédagogique et confirment notre engagement indéfectible envers l'excellence éducative.
+              Les performances remarquables obtenues par nos apprenants aux examens nationaux — CEPD, BEPC et Baccalauréat — constituent la preuve tangible de la qualité de notre encadrement et de notre engagement indéfectible envers l'excellence.
             </p>
           </motion.div>
         </div>
