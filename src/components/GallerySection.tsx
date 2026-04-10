@@ -28,11 +28,11 @@ const GallerySection = () => {
           </p>
         </motion.div>
 
-        {/* 2 vidéos aperçu */}
+        {/* 2 vidéos aperçu — 2025 */}
         <div className="grid sm:grid-cols-2 gap-6 mb-10">
           {[
+            { src: "/videos/cultural-2025-1.mp4", title: "Semaine Culturelle 2025", badge: "NOUVEAU" },
             { src: "/videos/cultural-video-1.mp4", title: "Semaine Culturelle - Moment 1" },
-            { src: "/videos/cultural-video-2.mp4", title: "Semaine Culturelle - Moment 2" },
           ].map((video, i) => (
             <motion.div
               key={i}
