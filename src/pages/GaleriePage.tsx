@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { X, Camera, Film, ArrowLeft } from "lucide-react";
+import { X, Camera, Film, ArrowLeft, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 import culturalDay1 from "@/assets/cultural-day-1.jpg";
 import promoFlyer from "@/assets/promo-flyer.jpeg";
@@ -11,7 +11,11 @@ const photos = [
   { src: promoFlyer, alt: "Affiche promotionnelle ECSG", caption: "Affiche Officielle" },
 ];
 
-const videos = [
+const videos2025 = [
+  { src: "/videos/cultural-2025-1.mp4", title: "Semaine Culturelle 2025 - Moment fort" },
+];
+
+const videosPrevious = [
   { src: "/videos/cultural-video-1.mp4", title: "Semaine Culturelle - Moment 1" },
   { src: "/videos/cultural-video-2.mp4", title: "Semaine Culturelle - Moment 2" },
   { src: "/videos/cultural-video-3.mp4", title: "Semaine Culturelle - Moment 3" },
@@ -50,10 +54,58 @@ const GaleriePage = () => {
           <h1 className="font-display text-3xl md:text-5xl font-bold text-primary-foreground mb-6">
             Notre Galerie
           </h1>
-          <p className="text-primary-foreground/60 max-w-2xl mx-auto">
+          <p className="text-primary-foreground/60 max-w-2xl mx-auto mb-6">
             Découvrez les moments forts de notre semaine culturelle et la vie quotidienne à l'École Chrétienne Sola Gratia
           </p>
+          <a
+            href="https://www.tiktok.com/@ecolechretiennesolagrat6"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-primary-foreground/10 hover:bg-primary-foreground/20 text-primary-foreground px-6 py-3 rounded-full transition-colors text-sm font-medium"
+          >
+            <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg">
+              <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.34-6.34V9.28a8.26 8.26 0 004.76 1.5v-3.45a4.85 4.85 0 01-1-.64z"/>
+            </svg>
+            Suivez-nous sur TikTok
+            <ExternalLink className="w-4 h-4" />
+          </a>
         </motion.div>
+
+        {/* Semaine Culturelle 2025 */}
+        <div className="mb-16">
+          <div className="flex items-center gap-3 mb-8">
+            <Film className="w-5 h-5 text-gold" />
+            <h2 className="font-display text-2xl font-semibold text-primary-foreground">
+              Semaine Culturelle 2025
+              <span className="text-primary-foreground/40 text-base ml-3 font-normal">30 mars — 1er avril</span>
+            </h2>
+          </div>
+          <div className="grid sm:grid-cols-2 gap-6">
+            {videos2025.map((video, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 + i * 0.1, duration: 0.5 }}
+                className="relative rounded-2xl overflow-hidden bg-navy-light/50 ring-2 ring-gold/30"
+              >
+                <div className="absolute top-3 left-3 z-10 bg-gold text-primary text-xs font-bold px-3 py-1 rounded-full">
+                  NOUVEAU 2025
+                </div>
+                <video
+                  src={video.src}
+                  className="w-full h-48 sm:h-64 object-cover"
+                  controls
+                  preload="metadata"
+                  playsInline
+                />
+                <div className="p-4">
+                  <p className="text-primary-foreground/70 text-sm font-medium">{video.title}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
 
         {/* Photos */}
         <div className="mb-16">
@@ -86,14 +138,14 @@ const GaleriePage = () => {
           </div>
         </div>
 
-        {/* Videos */}
+        {/* Vidéos années précédentes */}
         <div>
           <div className="flex items-center gap-3 mb-8">
             <Film className="w-5 h-5 text-gold" />
-            <h2 className="font-display text-2xl font-semibold text-primary-foreground">Vidéos de la Semaine Culturelle</h2>
+            <h2 className="font-display text-2xl font-semibold text-primary-foreground">Vidéos — Années Précédentes</h2>
           </div>
           <div className="grid sm:grid-cols-2 gap-6">
-            {videos.map((video, i) => (
+            {videosPrevious.map((video, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 30 }}

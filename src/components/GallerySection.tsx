@@ -28,19 +28,24 @@ const GallerySection = () => {
           </p>
         </motion.div>
 
-        {/* 2 vidéos aperçu */}
+        {/* 2 vidéos aperçu — 2025 */}
         <div className="grid sm:grid-cols-2 gap-6 mb-10">
           {[
+            { src: "/videos/cultural-2025-1.mp4", title: "Semaine Culturelle 2025", badge: "NOUVEAU" },
             { src: "/videos/cultural-video-1.mp4", title: "Semaine Culturelle - Moment 1" },
-            { src: "/videos/cultural-video-2.mp4", title: "Semaine Culturelle - Moment 2" },
           ].map((video, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.2 + i * 0.15, duration: 0.5 }}
-              className="relative rounded-2xl overflow-hidden bg-navy-light/50"
+              className={`relative rounded-2xl overflow-hidden bg-navy-light/50 ${'badge' in video ? 'ring-2 ring-gold/30' : ''}`}
             >
+              {'badge' in video && (
+                <div className="absolute top-3 left-3 z-10 bg-gold text-primary text-xs font-bold px-3 py-1 rounded-full">
+                  {(video as any).badge}
+                </div>
+              )}
               <video
                 src={video.src}
                 className="w-full h-48 sm:h-64 object-cover"
