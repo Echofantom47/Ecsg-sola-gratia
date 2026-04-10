@@ -12,7 +12,12 @@ const photos = [
 ];
 
 const videos2025 = [
-  { src: "/videos/cultural-2025-1.mp4", title: "Semaine Culturelle 2025 - Moment fort" },
+  { src: "/videos/cultural-2025-1.mp4", title: "Défilé d'ouverture — Les élèves célèbrent la diversité culturelle togolaise" },
+  { src: "/videos/cultural-2025-2.mp4", title: "Prestation artistique — Chants et danses traditionnelles par nos talentueux élèves" },
+  { src: "/videos/cultural-2025-3.mp4", title: "Journée Traditionnelle — Mise en valeur du patrimoine vestimentaire africain" },
+  { src: "/videos/cultural-2025-4.mp4", title: "Spectacle de clôture — Les moments les plus émouvants de la semaine" },
+  { src: "/videos/cultural-2025-5.mp4", title: "Activités culturelles — Ateliers créatifs et découvertes artistiques" },
+  { src: "/videos/cultural-2025-6.mp4", title: "Temps forts — Ambiance festive et esprit de communauté à Sola Gratia" },
 ];
 
 const videosPrevious = [
