@@ -39,8 +39,13 @@ const GallerySection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.2 + i * 0.15, duration: 0.5 }}
-              className="relative rounded-2xl overflow-hidden bg-navy-light/50"
+              className={`relative rounded-2xl overflow-hidden bg-navy-light/50 ${'badge' in video ? 'ring-2 ring-gold/30' : ''}`}
             >
+              {'badge' in video && (
+                <div className="absolute top-3 left-3 z-10 bg-gold text-primary text-xs font-bold px-3 py-1 rounded-full">
+                  {(video as any).badge}
+                </div>
+              )}
               <video
                 src={video.src}
                 className="w-full h-48 sm:h-64 object-cover"
