@@ -1,4 +1,5 @@
 import { MapPin, Phone, Mail } from "lucide-react";
+import { Link } from "react-router-dom";
 import logoEcsg from "@/assets/logo-ecsg.jpg";
 
 const Footer = () => {
@@ -27,10 +28,10 @@ const Footer = () => {
           <div>
             <h4 className="font-display font-bold text-primary-foreground mb-4">Nos Programmes</h4>
             <ul className="space-y-2 text-primary-foreground/50 text-sm">
-              <li>École Maternelle</li>
-              <li>École Primaire</li>
-              <li>Collège d'Excellence</li>
-              <li>Lycée Sola Gratia</li>
+              <li><Link to="/programmes" className="hover:text-gold transition-colors">École Maternelle</Link></li>
+              <li><Link to="/programmes" className="hover:text-gold transition-colors">École Primaire</Link></li>
+              <li><Link to="/programmes" className="hover:text-gold transition-colors">Collège d'Excellence</Link></li>
+              <li><Link to="/programmes" className="hover:text-gold transition-colors">Lycée Sola Gratia</Link></li>
               <li className="text-gold/60">Sections A4, C et D</li>
             </ul>
           </div>
