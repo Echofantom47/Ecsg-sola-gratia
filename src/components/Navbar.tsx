@@ -1,22 +1,21 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone } from "lucide-react";
 import logoEcsg from "@/assets/logo-ecsg.jpg";
 
 const navLinks = [
-  { label: "Accueil", href: "#accueil" },
-  { label: "Résultats 2025", href: "#resultats" },
-  { label: "À Propos", href: "#apropos" },
-  { label: "Nos Valeurs", href: "#valeurs" },
-  { label: "Programmes", href: "#programmes" },
+  { label: "Accueil", href: "/", isRoute: true },
+  { label: "À Propos", href: "/a-propos", isRoute: true },
+  { label: "Programmes", href: "/programmes", isRoute: true },
   { label: "Galerie", href: "/galerie", isRoute: true },
-  { label: "Contact", href: "#contact" },
+  { label: "Contact", href: "/contact", isRoute: true },
 ];
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -35,34 +34,28 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto flex items-center justify-between px-4">
-        <a href="#accueil" className="flex items-center gap-3">
+        <Link to="/" className="flex items-center gap-3">
           <img src={logoEcsg} alt="Logo ECSG" className="h-12 w-12 rounded-full object-cover border-2 border-gold" />
           <div className="hidden sm:block">
             <p className="font-display text-sm font-bold text-primary-foreground leading-tight">École Chrétienne</p>
             <p className="text-gradient-gold font-display text-base font-bold">Sola Gratia</p>
           </div>
-        </a>
+        </Link>
 
         <div className="hidden lg:flex items-center gap-1">
-          {navLinks.map((link) =>
-            link.isRoute ? (
-              <Link
-                key={link.href}
-                to={link.href}
-                className="px-3 py-2 text-sm font-medium text-primary-foreground/80 hover:text-gold transition-colors rounded-md hover:bg-primary-foreground/5"
-              >
-                {link.label}
-              </Link>
-            ) : (
-              <a
-                key={link.href}
-                href={link.href}
-                className="px-3 py-2 text-sm font-medium text-primary-foreground/80 hover:text-gold transition-colors rounded-md hover:bg-primary-foreground/5"
-              >
-                {link.label}
-              </a>
-            )
-          )}
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              to={link.href}
+              className={`px-3 py-2 text-sm font-medium transition-colors rounded-md hover:bg-primary-foreground/5 ${
+                location.pathname === link.href
+                  ? "text-gold"
+                  : "text-primary-foreground/80 hover:text-gold"
+              }`}
+            >
+              {link.label}
+            </Link>
+          ))}
           <a
             href="tel:+22890071065"
             className="ml-3 flex items-center gap-2 bg-gradient-gold text-primary font-semibold px-4 py-2 rounded-full text-sm hover:shadow-gold transition-all"
@@ -90,27 +83,20 @@ const Navbar = () => {
             className="lg:hidden bg-gradient-navy-dark border-t border-primary-foreground/10"
           >
             <div className="container mx-auto px-4 py-4 flex flex-col gap-1">
-              {navLinks.map((link) =>
-                link.isRoute ? (
-                  <Link
-                    key={link.href}
-                    to={link.href}
-                    onClick={() => setMobileOpen(false)}
-                    className="px-4 py-3 text-primary-foreground/80 hover:text-gold hover:bg-primary-foreground/5 rounded-md transition-colors font-medium"
-                  >
-                    {link.label}
-                  </Link>
-                ) : (
-                  <a
-                    key={link.href}
-                    href={link.href}
-                    onClick={() => setMobileOpen(false)}
-                    className="px-4 py-3 text-primary-foreground/80 hover:text-gold hover:bg-primary-foreground/5 rounded-md transition-colors font-medium"
-                  >
-                    {link.label}
-                  </a>
-                )
-              )}
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  onClick={() => setMobileOpen(false)}
+                  className={`px-4 py-3 rounded-md transition-colors font-medium ${
+                    location.pathname === link.href
+                      ? "text-gold bg-primary-foreground/5"
+                      : "text-primary-foreground/80 hover:text-gold hover:bg-primary-foreground/5"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              ))}
               <a
                 href="tel:+22890071065"
                 className="mt-2 flex items-center justify-center gap-2 bg-gradient-gold text-primary font-semibold px-4 py-3 rounded-full text-sm"
