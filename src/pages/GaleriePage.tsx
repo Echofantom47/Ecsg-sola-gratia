@@ -11,7 +11,7 @@ const photos = [
   { src: promoFlyer, alt: "Affiche promotionnelle ECSG", caption: "Affiche Officielle" },
 ];
 
-const videos2025 = [
+const videos2026 = [
   { src: "/videos/cultural-2025-1.mp4", title: "Défilé d'ouverture — Les élèves célèbrent la diversité culturelle togolaise" },
   { src: "/videos/cultural-2025-2.mp4", title: "Prestation artistique — Chants et danses traditionnelles par nos talentueux élèves" },
   { src: "/videos/cultural-2025-3.mp4", title: "Journée Traditionnelle — Mise en valeur du patrimoine vestimentaire africain" },
@@ -76,17 +76,17 @@ const GaleriePage = () => {
           </a>
         </motion.div>
 
-        {/* Semaine Culturelle 2025 */}
+        {/* Semaine Culturelle 2026 */}
         <div className="mb-16">
           <div className="flex items-center gap-3 mb-8">
             <Film className="w-5 h-5 text-gold" />
             <h2 className="font-display text-2xl font-semibold text-primary-foreground">
-              Semaine Culturelle 2025
+              Semaine Culturelle 2026
               <span className="text-primary-foreground/40 text-base ml-3 font-normal">30 mars — 1er avril</span>
             </h2>
           </div>
           <div className="grid sm:grid-cols-2 gap-6">
-            {videos2025.map((video, i) => (
+            {videos2026.map((video, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 30 }}
@@ -95,7 +95,7 @@ const GaleriePage = () => {
                 className="relative rounded-2xl overflow-hidden bg-navy-light/50 ring-2 ring-gold/30"
               >
                 <div className="absolute top-3 left-3 z-10 bg-gold text-primary text-xs font-bold px-3 py-1 rounded-full">
-                  NOUVEAU 2025
+                  NOUVEAU 2026
                 </div>
                 <video
                   src={video.src}
