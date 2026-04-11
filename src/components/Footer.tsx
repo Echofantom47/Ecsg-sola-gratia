@@ -81,9 +81,19 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-primary-foreground/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-primary-foreground/40 text-sm italic font-display">
-            «&nbsp;Je puis tout par celui qui me fortifie&nbsp;» — Philippiens 4:13
-          </p>
+          <div className="flex flex-col sm:flex-row items-center gap-3">
+            <p className="text-primary-foreground/40 text-sm italic font-display">
+              «&nbsp;Je puis tout par celui qui me fortifie&nbsp;» — Philippiens 4:13
+            </p>
+            <a
+              href="https://echofantom47.github.io/solagratia/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gold/50 hover:text-gold text-xs transition-colors"
+            >
+              Voir l'ancien site
+            </a>
+          </div>
           <div className="text-right">
             <p className="text-primary-foreground/30 text-xs">
               © 2025 École Chrétienne Sola Gratia. Tous droits réservés.
