@@ -75,7 +75,10 @@ const AIAssistant = () => {
   const openWhatsApp = () => window.open(WHATSAPP_URL, "_blank");
   const callSchool = () => (window.location.href = PHONE_URL);
   const openMaps = () =>
-    window.open("https://www.google.com/maps/search/?api=1&query=Lomé+Togo", "_blank");
+    window.open(
+      "https://www.google.com/maps/search/?api=1&query=%C3%89cole+Chr%C3%A9tienne+Sola+Gratia+Yokoe+Lom%C3%A9+Togo",
+      "_blank"
+    );
 
   const buildResponse = (intent: string): Message => {
     const id = crypto.randomUUID();

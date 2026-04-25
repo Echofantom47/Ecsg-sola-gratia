@@ -35,13 +35,13 @@ const ContactSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-3 gap-8">
           {/* Contact Cards */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ delay: 0.2, duration: 0.6 }}
-            className="space-y-4"
+            className="space-y-4 lg:col-span-1"
           >
             <h3 className="font-display text-xl font-bold text-foreground mb-6">École Chrétienne Sola Gratia</h3>
             {contactInfo.map((item, i) => (
@@ -71,14 +71,14 @@ const ContactSection = () => {
             </div>
           </motion.div>
 
-          {/* Practical Info */}
+          {/* Practical Info + Map */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ delay: 0.3, duration: 0.6 }}
+            className="lg:col-span-2 space-y-6"
           >
-            <h3 className="font-display text-xl font-bold text-foreground mb-6">Informations Pratiques</h3>
-            <div className="space-y-6">
+            <div className="grid sm:grid-cols-2 gap-4">
               {practicalInfo.map((item, i) => (
                 <div key={i} className="flex gap-4 p-5 bg-cream rounded-xl">
                   <div className="w-10 h-10 rounded-lg bg-gradient-gold flex items-center justify-center text-primary shrink-0">
@@ -94,9 +94,33 @@ const ContactSection = () => {
               ))}
             </div>
 
-            <div className="mt-8 p-6 bg-gradient-navy rounded-xl text-center">
-              <p className="text-gold font-display text-lg font-semibold mb-1">23+ Années d'Expérience</p>
-              <p className="text-primary-foreground/60 text-sm">Excellence éducative depuis 2002</p>
+            {/* Google Map embed */}
+            <div className="relative rounded-2xl overflow-hidden border border-border shadow-sm h-[300px] sm:h-[360px]">
+              <iframe
+                title="Localisation École Chrétienne Sola Gratia"
+                src="https://www.google.com/maps?q=%C3%89cole+Chr%C3%A9tienne+Sola+Gratia+Yokoe+Lom%C3%A9+Togo&output=embed"
+                className="absolute inset-0 w-full h-full"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+              />
+            </div>
+
+            <div className="grid sm:grid-cols-2 gap-4">
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=%C3%89cole+Chr%C3%A9tienne+Sola+Gratia+Yokoe+Lom%C3%A9+Togo"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 bg-gradient-navy text-primary-foreground font-semibold py-3 rounded-full text-sm hover:opacity-90 transition-all"
+              >
+                <MapPin className="w-4 h-4 text-gold" />
+                Itinéraire Google Maps
+              </a>
+              <div className="p-4 bg-gradient-navy rounded-full text-center flex items-center justify-center gap-3">
+                <p className="text-gold font-display font-semibold text-sm">23+ Années</p>
+                <span className="text-primary-foreground/40">•</span>
+                <p className="text-primary-foreground/70 text-xs">Depuis 2002</p>
+              </div>
             </div>
           </motion.div>
         </div>
