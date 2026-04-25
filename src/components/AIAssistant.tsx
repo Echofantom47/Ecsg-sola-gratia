@@ -43,9 +43,22 @@ const detectIntent = (text: string): string => {
   return "unknown";
 };
 
+const STORAGE_KEY = "ecsg_chat_history_v1";
+
 const AIAssistant = () => {
   const [open, setOpen] = useState(false);
-  const [messages, setMessages] = useState<Message[]>([]);
+  const [messages, setMessages] = useState<Message[]>(() => {
+    if (typeof window === "undefined") return [];
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) return [];
+      const parsed = JSON.parse(raw) as Message[];
+      // strip actions (functions can't be serialized) — keep only text history
+      return parsed.map((m) => ({ ...m, actions: undefined }));
+    } catch {
+      return [];
+    }
+  });
   const [input, setInput] = useState("");
   const [hasGreeted, setHasGreeted] = useState(false);
   const [showBubble, setShowBubble] = useState(false);
