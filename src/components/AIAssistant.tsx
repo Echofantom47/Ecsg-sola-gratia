@@ -43,9 +43,22 @@ const detectIntent = (text: string): string => {
   return "unknown";
 };
 
+const STORAGE_KEY = "ecsg_chat_history_v1";
+
 const AIAssistant = () => {
   const [open, setOpen] = useState(false);
-  const [messages, setMessages] = useState<Message[]>([]);
+  const [messages, setMessages] = useState<Message[]>(() => {
+    if (typeof window === "undefined") return [];
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) return [];
+      const parsed = JSON.parse(raw) as Message[];
+      // strip actions (functions can't be serialized) — keep only text history
+      return parsed.map((m) => ({ ...m, actions: undefined }));
+    } catch {
+      return [];
+    }
+  });
   const [input, setInput] = useState("");
   const [hasGreeted, setHasGreeted] = useState(false);
   const [showBubble, setShowBubble] = useState(false);
@@ -297,10 +310,20 @@ const AIAssistant = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [open]);
 
-  // Reset on route change if open
+  // Persist history (without actions) to localStorage
   useEffect(() => {
-    if (open) {
-      setMessages([getPageWelcome()]);
+    try {
+      const serializable = messages.map(({ id, role, content }) => ({ id, role, content }));
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(serializable));
+    } catch {
+      /* ignore */
+    }
+  }, [messages]);
+
+  // On route change, append a contextual hint instead of resetting history
+  useEffect(() => {
+    if (open && messages.length > 0) {
+      setMessages((prev) => [...prev, getPageWelcome()]);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location.pathname]);
@@ -413,6 +436,17 @@ const AIAssistant = () => {
                   En ligne
                 </p>
               </div>
+              <button
+                onClick={() => {
+                  setMessages([getPageWelcome()]);
+                  try { localStorage.removeItem(STORAGE_KEY); } catch {}
+                }}
+                className="text-primary-foreground/70 hover:text-gold transition-colors text-xs px-2 py-1 rounded-md hover:bg-primary-foreground/10"
+                aria-label="Nouvelle conversation"
+                title="Nouvelle conversation"
+              >
+                ↻
+              </button>
               <button
                 onClick={() => setOpen(false)}
                 className="text-primary-foreground/70 hover:text-gold transition-colors"
