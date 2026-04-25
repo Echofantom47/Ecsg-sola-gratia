@@ -35,13 +35,13 @@ const ContactSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-3 gap-8">
           {/* Contact Cards */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ delay: 0.2, duration: 0.6 }}
-            className="space-y-4"
+            className="space-y-4 lg:col-span-1"
           >
             <h3 className="font-display text-xl font-bold text-foreground mb-6">École Chrétienne Sola Gratia</h3>
             {contactInfo.map((item, i) => (
