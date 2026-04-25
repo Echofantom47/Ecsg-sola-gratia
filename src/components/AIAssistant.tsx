@@ -310,10 +310,20 @@ const AIAssistant = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [open]);
 
-  // Reset on route change if open
+  // Persist history (without actions) to localStorage
   useEffect(() => {
-    if (open) {
-      setMessages([getPageWelcome()]);
+    try {
+      const serializable = messages.map(({ id, role, content }) => ({ id, role, content }));
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(serializable));
+    } catch {
+      /* ignore */
+    }
+  }, [messages]);
+
+  // On route change, append a contextual hint instead of resetting history
+  useEffect(() => {
+    if (open && messages.length > 0) {
+      setMessages((prev) => [...prev, getPageWelcome()]);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location.pathname]);
