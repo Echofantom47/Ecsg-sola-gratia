@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes, useLocation } from "react-router-dom";
 import Index from "./pages/Index";
 import GaleriePage from "./pages/GaleriePage";
 import AProposPage from "./pages/AProposPage";
@@ -12,6 +12,13 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
+const LegacyGithubRedirect = () => {
+  const location = useLocation();
+  const normalizedPath = location.pathname.replace(/^\/Ecsg-sola-gratia/, "") || "/";
+
+  return <Navigate to={normalizedPath} replace />;
+};
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
@@ -19,6 +26,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
+          <Route path="/Ecsg-sola-gratia/*" element={<LegacyGithubRedirect />} />
           <Route path="/" element={<Index />} />
           <Route path="/a-propos" element={<AProposPage />} />
           <Route path="/programmes" element={<ProgrammesPage />} />
