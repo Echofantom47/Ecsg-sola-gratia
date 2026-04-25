@@ -4,7 +4,6 @@ import path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "/Ecsg-sola-gratia/", // Cette ligne est la clé !
   server: {
     host: "::",
     port: 8080,
