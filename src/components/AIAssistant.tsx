@@ -437,6 +437,17 @@ const AIAssistant = () => {
                 </p>
               </div>
               <button
+                onClick={() => {
+                  setMessages([getPageWelcome()]);
+                  try { localStorage.removeItem(STORAGE_KEY); } catch {}
+                }}
+                className="text-primary-foreground/70 hover:text-gold transition-colors text-xs px-2 py-1 rounded-md hover:bg-primary-foreground/10"
+                aria-label="Nouvelle conversation"
+                title="Nouvelle conversation"
+              >
+                ↻
+              </button>
+              <button
                 onClick={() => setOpen(false)}
                 className="text-primary-foreground/70 hover:text-gold transition-colors"
                 aria-label="Fermer"
