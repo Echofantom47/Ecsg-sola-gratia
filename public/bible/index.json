@@ -1,0 +1,464 @@
+[
+  {
+    "name": "La Genèse",
+    "slug": "la-genese",
+    "chapters": 46,
+    "verses": 1438,
+    "testament": "AT"
+  },
+  {
+    "name": "L'Exode",
+    "slug": "l-exode",
+    "chapters": 37,
+    "verses": 1132,
+    "testament": "AT"
+  },
+  {
+    "name": "Le Lévitique",
+    "slug": "le-levitique",
+    "chapters": 22,
+    "verses": 722,
+    "testament": "AT"
+  },
+  {
+    "name": "Les Nombres",
+    "slug": "les-nombres",
+    "chapters": 32,
+    "verses": 1177,
+    "testament": "AT"
+  },
+  {
+    "name": "Le Deutéronome",
+    "slug": "le-deuteronome",
+    "chapters": 32,
+    "verses": 893,
+    "testament": "AT"
+  },
+  {
+    "name": "Le livre de Josué",
+    "slug": "le-livre-de-josue",
+    "chapters": 23,
+    "verses": 643,
+    "testament": "AT"
+  },
+  {
+    "name": "Le livre des Juges",
+    "slug": "le-livre-des-juges",
+    "chapters": 18,
+    "verses": 563,
+    "testament": "AT"
+  },
+  {
+    "name": "Le livre de Ruth",
+    "slug": "le-livre-de-ruth",
+    "chapters": 4,
+    "verses": 85,
+    "testament": "AT"
+  },
+  {
+    "name": "1er livre de Samuel",
+    "slug": "1er-livre-de-samuel",
+    "chapters": 27,
+    "verses": 726,
+    "testament": "AT"
+  },
+  {
+    "name": "2ème livre de Samuel",
+    "slug": "2eme-livre-de-samuel",
+    "chapters": 21,
+    "verses": 613,
+    "testament": "AT"
+  },
+  {
+    "name": "1er livre des Rois",
+    "slug": "1er-livre-des-rois",
+    "chapters": 19,
+    "verses": 742,
+    "testament": "AT"
+  },
+  {
+    "name": "2ème livre des Rois",
+    "slug": "2eme-livre-des-rois",
+    "chapters": 22,
+    "verses": 641,
+    "testament": "AT"
+  },
+  {
+    "name": "1er livre des Chroniques",
+    "slug": "1er-livre-des-chroniques",
+    "chapters": 28,
+    "verses": 925,
+    "testament": "AT"
+  },
+  {
+    "name": "2ème livre des Chroniques",
+    "slug": "2eme-livre-des-chroniques",
+    "chapters": 32,
+    "verses": 738,
+    "testament": "AT"
+  },
+  {
+    "name": "Le livre d'Esdras",
+    "slug": "le-livre-d-esdras",
+    "chapters": 10,
+    "verses": 280,
+    "testament": "AT"
+  },
+  {
+    "name": "Le livre de Néhémie",
+    "slug": "le-livre-de-nehemie",
+    "chapters": 13,
+    "verses": 406,
+    "testament": "AT"
+  },
+  {
+    "name": "Le livre d'Esther",
+    "slug": "le-livre-d-esther",
+    "chapters": 10,
+    "verses": 167,
+    "testament": "AT"
+  },
+  {
+    "name": "Le livre de Job",
+    "slug": "le-livre-de-job",
+    "chapters": 36,
+    "verses": 931,
+    "testament": "AT"
+  },
+  {
+    "name": "Les Psaumes",
+    "slug": "les-psaumes",
+    "chapters": 138,
+    "verses": 2342,
+    "testament": "AT"
+  },
+  {
+    "name": "Les Proverbes",
+    "slug": "les-proverbes",
+    "chapters": 30,
+    "verses": 888,
+    "testament": "AT"
+  },
+  {
+    "name": "L'Ecclésiaste (Qohéleth)",
+    "slug": "l-ecclesiaste-qoheleth",
+    "chapters": 10,
+    "verses": 182,
+    "testament": "AT"
+  },
+  {
+    "name": "Le Cantique des Cantiques",
+    "slug": "le-cantique-des-cantiques",
+    "chapters": 8,
+    "verses": 117,
+    "testament": "AT"
+  },
+  {
+    "name": "Esaïe",
+    "slug": "esaie",
+    "chapters": 61,
+    "verses": 1232,
+    "testament": "AT"
+  },
+  {
+    "name": "Jérémie",
+    "slug": "jeremie",
+    "chapters": 47,
+    "verses": 1252,
+    "testament": "AT"
+  },
+  {
+    "name": "Les Lamentations",
+    "slug": "les-lamentations",
+    "chapters": 4,
+    "verses": 132,
+    "testament": "AT"
+  },
+  {
+    "name": "Ezéchiel",
+    "slug": "ezechiel",
+    "chapters": 44,
+    "verses": 1196,
+    "testament": "AT"
+  },
+  {
+    "name": "Daniel",
+    "slug": "daniel",
+    "chapters": 10,
+    "verses": 300,
+    "testament": "AT"
+  },
+  {
+    "name": "Osée",
+    "slug": "osee",
+    "chapters": 12,
+    "verses": 181,
+    "testament": "AT"
+  },
+  {
+    "name": "Joël",
+    "slug": "joel",
+    "chapters": 2,
+    "verses": 53,
+    "testament": "AT"
+  },
+  {
+    "name": "Amos",
+    "slug": "amos",
+    "chapters": 9,
+    "verses": 146,
+    "testament": "AT"
+  },
+  {
+    "name": "Abdias",
+    "slug": "abdias",
+    "chapters": 1,
+    "verses": 21,
+    "testament": "AT"
+  },
+  {
+    "name": "Jonas",
+    "slug": "jonas",
+    "chapters": 3,
+    "verses": 38,
+    "testament": "AT"
+  },
+  {
+    "name": "Michée",
+    "slug": "michee",
+    "chapters": 6,
+    "verses": 92,
+    "testament": "AT"
+  },
+  {
+    "name": "Nahoum",
+    "slug": "nahoum",
+    "chapters": 3,
+    "verses": 47,
+    "testament": "AT"
+  },
+  {
+    "name": "Habaquq",
+    "slug": "habaquq",
+    "chapters": 2,
+    "verses": 39,
+    "testament": "AT"
+  },
+  {
+    "name": "Sophonie",
+    "slug": "sophonie",
+    "chapters": 2,
+    "verses": 38,
+    "testament": "AT"
+  },
+  {
+    "name": "Aggée",
+    "slug": "aggee",
+    "chapters": 2,
+    "verses": 38,
+    "testament": "AT"
+  },
+  {
+    "name": "Zacharie",
+    "slug": "zacharie",
+    "chapters": 14,
+    "verses": 211,
+    "testament": "AT"
+  },
+  {
+    "name": "Malachie",
+    "slug": "malachie",
+    "chapters": 4,
+    "verses": 55,
+    "testament": "AT"
+  },
+  {
+    "name": "Evangile selon saint Matthieu",
+    "slug": "evangile-selon-saint-matthieu",
+    "chapters": 23,
+    "verses": 919,
+    "testament": "NT"
+  },
+  {
+    "name": "Evangile selon saint Marc",
+    "slug": "evangile-selon-saint-marc",
+    "chapters": 13,
+    "verses": 564,
+    "testament": "NT"
+  },
+  {
+    "name": "Evangile selon saint Luc",
+    "slug": "evangile-selon-saint-luc",
+    "chapters": 22,
+    "verses": 1070,
+    "testament": "NT"
+  },
+  {
+    "name": "Evangile selon saint Jean",
+    "slug": "evangile-selon-saint-jean",
+    "chapters": 19,
+    "verses": 808,
+    "testament": "NT"
+  },
+  {
+    "name": "Les Actes des Apôtres",
+    "slug": "les-actes-des-apotres",
+    "chapters": 25,
+    "verses": 916,
+    "testament": "NT"
+  },
+  {
+    "name": "Epître aux Romains",
+    "slug": "epitre-aux-romains",
+    "chapters": 14,
+    "verses": 379,
+    "testament": "NT"
+  },
+  {
+    "name": "1ère Epître aux Corinthiens",
+    "slug": "1ere-epitre-aux-corinthiens",
+    "chapters": 16,
+    "verses": 437,
+    "testament": "NT"
+  },
+  {
+    "name": "2ème Epître aux Corinthiens",
+    "slug": "2eme-epitre-aux-corinthiens",
+    "chapters": 9,
+    "verses": 189,
+    "testament": "NT"
+  },
+  {
+    "name": "Epître aux Galates",
+    "slug": "epitre-aux-galates",
+    "chapters": 5,
+    "verses": 128,
+    "testament": "NT"
+  },
+  {
+    "name": "Epître aux Ephésiens",
+    "slug": "epitre-aux-ephesiens",
+    "chapters": 4,
+    "verses": 102,
+    "testament": "NT"
+  },
+  {
+    "name": "Epître aux Philippiens",
+    "slug": "epitre-aux-philippiens",
+    "chapters": 4,
+    "verses": 104,
+    "testament": "NT"
+  },
+  {
+    "name": "Epître aux Colossiens",
+    "slug": "epitre-aux-colossiens",
+    "chapters": 4,
+    "verses": 95,
+    "testament": "NT"
+  },
+  {
+    "name": "1ère Epître aux Thessaloniciens",
+    "slug": "1ere-epitre-aux-thessaloniciens",
+    "chapters": 5,
+    "verses": 89,
+    "testament": "NT"
+  },
+  {
+    "name": "2ème Epître aux Thessaloniciens",
+    "slug": "2eme-epitre-aux-thessaloniciens",
+    "chapters": 3,
+    "verses": 47,
+    "testament": "NT"
+  },
+  {
+    "name": "1ère Epître à Timothée",
+    "slug": "1ere-epitre-a-timothee",
+    "chapters": 3,
+    "verses": 61,
+    "testament": "NT"
+  },
+  {
+    "name": "2ème Epître à Timothée",
+    "slug": "2eme-epitre-a-timothee",
+    "chapters": 3,
+    "verses": 65,
+    "testament": "NT"
+  },
+  {
+    "name": "Epître à Tite",
+    "slug": "epitre-a-tite",
+    "chapters": 3,
+    "verses": 46,
+    "testament": "NT"
+  },
+  {
+    "name": "Epître à Philémon",
+    "slug": "epitre-a-philemon",
+    "chapters": 1,
+    "verses": 25,
+    "testament": "NT"
+  },
+  {
+    "name": "Epître aux Hébreux",
+    "slug": "epitre-aux-hebreux",
+    "chapters": 12,
+    "verses": 264,
+    "testament": "NT"
+  },
+  {
+    "name": "Epître de saint Jacques",
+    "slug": "epitre-de-saint-jacques",
+    "chapters": 4,
+    "verses": 91,
+    "testament": "NT"
+  },
+  {
+    "name": "1ère Epître de saint Pierre",
+    "slug": "1ere-epitre-de-saint-pierre",
+    "chapters": 5,
+    "verses": 105,
+    "testament": "NT"
+  },
+  {
+    "name": "2ème Epître de saint Pierre",
+    "slug": "2eme-epitre-de-saint-pierre",
+    "chapters": 3,
+    "verses": 61,
+    "testament": "NT"
+  },
+  {
+    "name": "1ère Epître de saint Jean",
+    "slug": "1ere-epitre-de-saint-jean",
+    "chapters": 5,
+    "verses": 105,
+    "testament": "NT"
+  },
+  {
+    "name": "2ème Epître de saint Jean",
+    "slug": "2eme-epitre-de-saint-jean",
+    "chapters": 1,
+    "verses": 13,
+    "testament": "NT"
+  },
+  {
+    "name": "3ème Epître de saint Jean",
+    "slug": "3eme-epitre-de-saint-jean",
+    "chapters": 1,
+    "verses": 15,
+    "testament": "NT"
+  },
+  {
+    "name": "Epître de saint Jude",
+    "slug": "epitre-de-saint-jude",
+    "chapters": 1,
+    "verses": 25,
+    "testament": "NT"
+  },
+  {
+    "name": "L'Apocalypse",
+    "slug": "l-apocalypse",
+    "chapters": 21,
+    "verses": 396,
+    "testament": "NT"
+  }
+]
