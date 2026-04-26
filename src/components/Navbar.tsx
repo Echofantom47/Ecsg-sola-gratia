@@ -8,6 +8,7 @@ const navLinks = [
   { label: "Accueil", href: "/", isRoute: true },
   { label: "À Propos", href: "/a-propos", isRoute: true },
   { label: "Programmes", href: "/programmes", isRoute: true },
+  { label: "Versets", href: "/versets", isRoute: true },
   { label: "Galerie", href: "/galerie", isRoute: true },
   { label: "Contact", href: "/contact", isRoute: true },
 ];
