@@ -19,19 +19,27 @@ const ContactSection = () => {
   ];
 
   return (
-    <section id="contact" className="py-24 bg-background" ref={ref}>
-      <div className="container mx-auto px-4">
+    <section id="contact" className="py-32 md:py-40 bg-background relative overflow-hidden" ref={ref}>
+      <span className="absolute -top-10 right-0 font-serif-display italic text-[20vw] leading-none text-primary/[0.04] select-none pointer-events-none">
+        Contact
+      </span>
+      <div className="container mx-auto px-4 relative">
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={inView ? { opacity: 1 } : {}}
-          className="text-center mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          className="max-w-5xl mb-16"
         >
-          <p className="text-gold-dark uppercase tracking-[0.3em] text-sm font-semibold mb-4">Nous Rejoindre</p>
-          <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground mb-6">
-            Contactez Notre Institution
+          <p className="text-gold-dark uppercase tracking-[0.4em] text-xs font-semibold mb-6 flex items-center gap-3">
+            <span className="h-px w-8 bg-gold-dark" /> Nous Rejoindre
+          </p>
+          <h2 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold text-foreground leading-[0.95] tracking-tight">
+            Contactez
+            <span className="block font-serif-display italic font-light text-gold-dark">
+              notre institution.
+            </span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Notre équipe administrative demeure à votre entière disposition pour toutes les informations concernant nos programmes et les modalités d'inscription
+          <p className="text-muted-foreground max-w-xl mt-6 text-lg">
+            Notre équipe administrative demeure à votre entière disposition pour toutes les informations concernant nos programmes et les modalités d'inscription.
           </p>
         </motion.div>
 
