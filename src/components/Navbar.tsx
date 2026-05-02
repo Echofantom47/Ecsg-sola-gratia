@@ -5,12 +5,12 @@ import { Menu, X, Phone } from "lucide-react";
 import logoEcsg from "@/assets/logo-ecsg.jpg";
 
 const navLinks = [
-  { label: "Accueil", href: "/", isRoute: true },
-  { label: "À Propos", href: "/a-propos", isRoute: true },
-  { label: "Programmes", href: "/programmes", isRoute: true },
-  { label: "Versets", href: "/versets", isRoute: true },
-  { label: "Galerie", href: "/galerie", isRoute: true },
-  { label: "Contact", href: "/contact", isRoute: true },
+  { num: "01", label: "Accueil", href: "/" },
+  { num: "02", label: "À Propos", href: "/a-propos" },
+  { num: "03", label: "Programmes", href: "/programmes" },
+  { num: "04", label: "Versets", href: "/versets" },
+  { num: "05", label: "Galerie", href: "/galerie" },
+  { num: "06", label: "Contact", href: "/contact" },
 ];
 
 const Navbar = () => {
@@ -19,56 +19,71 @@ const Navbar = () => {
   const location = useLocation();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50);
+    const onScroll = () => setScrolled(window.scrollY > 30);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
     <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
+      initial={{ y: -40, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.6 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-gradient-navy shadow-elegant py-2"
-          : "bg-transparent py-4"
+          ? "bg-background/90 backdrop-blur-xl border-b border-foreground/10"
+          : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto flex items-center justify-between px-4">
-        <Link to="/" className="flex items-center gap-3">
-          <img src={logoEcsg} alt="Logo ECSG" className="h-12 w-12 rounded-full object-cover border-2 border-gold" />
-          <div className="hidden sm:block">
-            <p className="font-display text-sm font-bold text-primary-foreground leading-tight">École Chrétienne</p>
-            <p className="text-gradient-gold font-display text-base font-bold">Sola Gratia</p>
+      <div className="container mx-auto flex items-center justify-between px-4 h-16 md:h-20">
+        <Link to="/" className="flex items-center gap-3 group">
+          <img
+            src={logoEcsg}
+            alt="Logo ECSG"
+            className="h-10 w-10 md:h-11 md:w-11 rounded-full object-cover ring-1 ring-gold/40"
+          />
+          <div className="hidden sm:flex flex-col leading-none">
+            <span className={`font-mono-tag text-[10px] tracking-[0.3em] uppercase ${scrolled ? "text-muted-foreground" : "text-primary-foreground/60"}`}>
+              Est. 2002 — Lomé
+            </span>
+            <span className={`font-fraunces text-lg font-medium tracking-tight mt-1 ${scrolled ? "text-foreground" : "text-primary-foreground"}`}>
+              Sola Gratia<span className="text-gold">.</span>
+            </span>
           </div>
         </Link>
 
         <div className="hidden lg:flex items-center gap-1">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              to={link.href}
-              className={`px-3 py-2 text-sm font-medium transition-colors rounded-md hover:bg-primary-foreground/5 ${
-                location.pathname === link.href
-                  ? "text-gold"
-                  : "text-primary-foreground/80 hover:text-gold"
-              }`}
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            const active = location.pathname === link.href;
+            return (
+              <Link
+                key={link.href}
+                to={link.href}
+                className={`group px-3 py-2 text-sm transition-colors flex items-baseline gap-1.5 ${
+                  active
+                    ? "text-gold"
+                    : scrolled
+                    ? "text-foreground/80 hover:text-foreground"
+                    : "text-primary-foreground/80 hover:text-primary-foreground"
+                }`}
+              >
+                <span className="font-mono-tag text-[9px] opacity-50">{link.num}</span>
+                <span className="hover-underline">{link.label}</span>
+              </Link>
+            );
+          })}
           <a
             href="tel:+22890071065"
-            className="ml-3 flex items-center gap-2 bg-gradient-gold text-primary font-semibold px-4 py-2 rounded-full text-sm hover:shadow-gold transition-all"
+            className="ml-4 inline-flex items-center gap-2 border border-gold text-gold font-mono-tag text-[11px] uppercase tracking-[0.18em] px-4 py-2.5 rounded-none hover:bg-gold hover:text-primary transition-colors"
           >
-            <Phone className="w-4 h-4" />
-            Nous Appeler
+            <Phone className="w-3.5 h-3.5" />
+            Inscription →
           </a>
         </div>
 
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="lg:hidden text-primary-foreground p-2"
+          className={`lg:hidden p-2 ${scrolled ? "text-foreground" : "text-primary-foreground"}`}
           aria-label="Menu"
         >
           {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -81,26 +96,25 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-gradient-navy-dark border-t border-primary-foreground/10"
+            className="lg:hidden bg-background border-t border-foreground/10"
           >
-            <div className="container mx-auto px-4 py-4 flex flex-col gap-1">
+            <div className="container mx-auto px-4 py-6 flex flex-col">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   to={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className={`px-4 py-3 rounded-md transition-colors font-medium ${
-                    location.pathname === link.href
-                      ? "text-gold bg-primary-foreground/5"
-                      : "text-primary-foreground/80 hover:text-gold hover:bg-primary-foreground/5"
+                  className={`py-4 border-b border-foreground/10 flex items-baseline justify-between ${
+                    location.pathname === link.href ? "text-gold" : "text-foreground"
                   }`}
                 >
-                  {link.label}
+                  <span className="font-fraunces text-2xl">{link.label}</span>
+                  <span className="font-mono-tag text-xs opacity-50">{link.num}</span>
                 </Link>
               ))}
               <a
                 href="tel:+22890071065"
-                className="mt-2 flex items-center justify-center gap-2 bg-gradient-gold text-primary font-semibold px-4 py-3 rounded-full text-sm"
+                className="mt-6 inline-flex items-center justify-center gap-2 bg-foreground text-background font-mono-tag uppercase tracking-[0.2em] text-xs py-4"
               >
                 <Phone className="w-4 h-4" />
                 +228 90 07 10 65
