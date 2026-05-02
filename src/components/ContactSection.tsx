@@ -1,135 +1,123 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { MapPin, Phone, Mail, Clock, User, GraduationCap } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, User, GraduationCap, ArrowUpRight } from "lucide-react";
 
 const ContactSection = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   const contactInfo = [
-    { icon: <MapPin className="w-5 h-5" />, label: "Adresse Principale", value: "Quartier Yokoé, Lomé — République Togolaise" },
-    { icon: <GraduationCap className="w-5 h-5" />, label: "Niveaux d'Enseignement", value: "Maternelle, Primaire, Collège et Lycée" },
-    { icon: <Phone className="w-5 h-5" />, label: "Contact Téléphonique", value: "+228 90 07 70 54 / +228 91 47 74 56" },
-    { icon: <Mail className="w-5 h-5" />, label: "Adresse Électronique", value: "Ecolesolagratia2002@gmail.com" },
-  ];
-
-  const practicalInfo = [
-    { icon: <Clock className="w-5 h-5" />, label: "Horaires d'Ouverture", lines: ["Lundi à Vendredi : 7h00 - 14h30", "Samedi : 8h00 - 12h00", "Dimanche : Fermé"] },
-    { icon: <User className="w-5 h-5" />, label: "Fondateur", lines: ["Monsieur DOSSEH Kokou Beaugars"] },
+    { icon: <MapPin className="w-4 h-4" />, label: "Adresse", value: "Quartier Yokoé, Lomé — République Togolaise" },
+    { icon: <GraduationCap className="w-4 h-4" />, label: "Niveaux", value: "Maternelle, Primaire, Collège, Lycée" },
+    { icon: <Phone className="w-4 h-4" />, label: "Téléphone", value: "+228 90 07 70 54 / +228 91 47 74 56" },
+    { icon: <Mail className="w-4 h-4" />, label: "E-mail", value: "Ecolesolagratia2002@gmail.com" },
+    { icon: <Clock className="w-4 h-4" />, label: "Horaires", value: "Lun-Ven 7h-14h30 · Sam 8h-12h" },
+    { icon: <User className="w-4 h-4" />, label: "Fondateur", value: "Monsieur DOSSEH Kokou Beaugars" },
   ];
 
   return (
-    <section id="contact" className="py-32 md:py-40 bg-background relative overflow-hidden" ref={ref}>
-      <span className="absolute -top-10 right-0 font-serif-display italic text-[20vw] leading-none text-primary/[0.04] select-none pointer-events-none">
-        Contact
-      </span>
+    <section
+      id="contact"
+      className="py-28 md:py-36 bg-background relative overflow-hidden"
+      ref={ref}
+    >
       <div className="container mx-auto px-4 relative">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          className="max-w-5xl mb-16"
-        >
-          <p className="text-gold-dark uppercase tracking-[0.4em] text-xs font-semibold mb-6 flex items-center gap-3">
-            <span className="h-px w-8 bg-gold-dark" /> Nous Rejoindre
-          </p>
-          <h2 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold text-foreground leading-[0.95] tracking-tight">
+        <div className="grid lg:grid-cols-12 gap-6 items-end mb-12">
+          <div className="lg:col-span-3">
+            <p className="number-tag text-gold-dark">— Chapitre 08</p>
+            <p className="font-mono-tag text-[10px] uppercase tracking-[0.3em] text-foreground/40 mt-2">
+              Nous Rejoindre
+            </p>
+          </div>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.7 }}
+            className="lg:col-span-9 text-display-xl text-foreground text-[12vw] md:text-[7vw] lg:text-[5.5vw]"
+          >
             Contactez
-            <span className="block font-serif-display italic font-light text-gold-dark">
-              notre institution.
-            </span>
-          </h2>
-          <p className="text-muted-foreground max-w-xl mt-6 text-lg">
-            Notre équipe administrative demeure à votre entière disposition pour toutes les informations concernant nos programmes et les modalités d'inscription.
-          </p>
-        </motion.div>
+            <span className="italic font-light text-gold-dark"> notre institution.</span>
+          </motion.h2>
+        </div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
-          {/* Contact Cards */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ delay: 0.2, duration: 0.6 }}
-            className="space-y-4 lg:col-span-1"
-          >
-            <h3 className="font-display text-xl font-bold text-foreground mb-6">École Chrétienne Sola Gratia</h3>
-            {contactInfo.map((item, i) => (
-              <div key={i} className="flex gap-4 p-4 bg-card rounded-xl shadow-sm border border-border hover:border-gold/30 transition-colors">
-                <div className="w-10 h-10 rounded-lg bg-gradient-navy flex items-center justify-center text-gold shrink-0">
-                  {item.icon}
-                </div>
-                <div>
-                  <p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">{item.label}</p>
-                  <p className="text-foreground font-medium text-sm">{item.value}</p>
-                </div>
-              </div>
-            ))}
-            <div className="flex gap-4 pt-4">
-              <a
-                href="tel:+22890077054"
-                className="flex-1 bg-gradient-gold text-primary font-semibold py-3 rounded-full text-center text-sm hover:shadow-gold transition-all"
-              >
-                Nous Appeler
-              </a>
-              <a
-                href="mailto:Ecolesolagratia2002@gmail.com"
-                className="flex-1 bg-gradient-navy text-primary-foreground font-semibold py-3 rounded-full text-center text-sm hover:opacity-90 transition-all"
-              >
-                Nous Écrire
-              </a>
-            </div>
-          </motion.div>
+        <div className="editorial-rule mb-12" />
 
-          {/* Practical Info + Map */}
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-10">
+          {/* LEFT — info ledger */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ delay: 0.3, duration: 0.6 }}
-            className="lg:col-span-2 space-y-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
+            className="lg:col-span-5"
           >
-            <div className="grid sm:grid-cols-2 gap-4">
-              {practicalInfo.map((item, i) => (
-                <div key={i} className="flex gap-4 p-5 bg-cream rounded-xl">
-                  <div className="w-10 h-10 rounded-lg bg-gradient-gold flex items-center justify-center text-primary shrink-0">
-                    {item.icon}
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold text-foreground mb-1">{item.label}</p>
-                    {item.lines.map((line, j) => (
-                      <p key={j} className="text-muted-foreground text-sm">{line}</p>
-                    ))}
-                  </div>
+            <p className="font-fraunces text-2xl md:text-3xl text-foreground/90 leading-snug mb-8">
+              Notre équipe administrative demeure à votre <span className="italic text-gold-dark">entière disposition</span> pour toutes les informations concernant nos programmes et les modalités d'inscription.
+            </p>
+
+            <div className="divide-y divide-foreground/10 border-t border-foreground/10">
+              {contactInfo.map((c, i) => (
+                <div key={i} className="grid grid-cols-12 gap-4 py-4 items-baseline">
+                  <span className="col-span-1 text-gold-dark mt-1">{c.icon}</span>
+                  <span className="col-span-3 font-mono-tag text-[10px] uppercase tracking-[0.25em] text-foreground/50">
+                    {c.label}
+                  </span>
+                  <span className="col-span-8 font-fraunces text-base md:text-lg text-foreground">
+                    {c.value}
+                  </span>
                 </div>
               ))}
             </div>
 
-            {/* Google Map embed */}
-            <div className="relative rounded-2xl overflow-hidden border border-border shadow-sm h-[300px] sm:h-[360px]">
+            <div className="grid grid-cols-2 gap-3 mt-8">
+              <a
+                href="tel:+22890077054"
+                className="group inline-flex items-center justify-between bg-foreground text-background px-5 py-4 font-mono-tag text-[11px] uppercase tracking-[0.25em] hover:bg-gold-dark transition-colors"
+              >
+                Appeler
+                <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              </a>
+              <a
+                href="mailto:Ecolesolagratia2002@gmail.com"
+                className="group inline-flex items-center justify-between border border-foreground text-foreground px-5 py-4 font-mono-tag text-[11px] uppercase tracking-[0.25em] hover:bg-foreground hover:text-background transition-colors"
+              >
+                Écrire
+                <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              </a>
+            </div>
+          </motion.div>
+
+          {/* RIGHT — Map */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="lg:col-span-7"
+          >
+            <div className="relative overflow-hidden h-[400px] md:h-[560px] corner-frame">
               <iframe
                 title="Localisation École Chrétienne Sola Gratia"
                 src="https://www.google.com/maps?q=%C3%89cole+Chr%C3%A9tienne+Sola+Gratia+Yokoe+Lom%C3%A9+Togo&output=embed"
-                className="absolute inset-0 w-full h-full"
+                className="absolute inset-0 w-full h-full grayscale-[20%]"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 allowFullScreen
               />
-            </div>
-
-            <div className="grid sm:grid-cols-2 gap-4">
-              <a
-                href="https://www.google.com/maps/search/?api=1&query=%C3%89cole+Chr%C3%A9tienne+Sola+Gratia+Yokoe+Lom%C3%A9+Togo"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 bg-gradient-navy text-primary-foreground font-semibold py-3 rounded-full text-sm hover:opacity-90 transition-all"
-              >
-                <MapPin className="w-4 h-4 text-gold" />
-                Itinéraire Google Maps
-              </a>
-              <div className="p-4 bg-gradient-navy rounded-full text-center flex items-center justify-center gap-3">
-                <p className="text-gold font-display font-semibold text-sm">23+ Années</p>
-                <span className="text-primary-foreground/40">•</span>
-                <p className="text-primary-foreground/70 text-xs">Depuis 2002</p>
+              <div className="absolute top-4 left-4 right-4 flex items-center justify-between text-foreground font-mono-tag text-[10px] uppercase tracking-[0.3em] bg-background/80 backdrop-blur px-3 py-2">
+                <span>Carte 01 — Yokoé, Lomé</span>
+                <span className="text-gold-dark">06°08′N · 01°13′E</span>
               </div>
             </div>
+
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=%C3%89cole+Chr%C3%A9tienne+Sola+Gratia+Yokoe+Lom%C3%A9+Togo"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group mt-4 inline-flex items-center gap-2 font-mono-tag text-[11px] uppercase tracking-[0.25em] text-foreground/70 hover:text-gold-dark"
+            >
+              <MapPin className="w-3.5 h-3.5" />
+              <span className="hover-underline">Ouvrir l'itinéraire Google Maps</span>
+              <ArrowUpRight className="w-3.5 h-3.5" />
+            </a>
           </motion.div>
         </div>
       </div>
