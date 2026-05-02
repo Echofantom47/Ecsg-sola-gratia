@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Target, CheckCircle, Quote } from "lucide-react";
+import { CheckCircle } from "lucide-react";
 import classroomImg from "@/assets/classroom.jpg";
 
 const missions = [
@@ -18,131 +18,130 @@ const AboutSection = () => {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="apropos" className="py-32 md:py-40 bg-background relative overflow-hidden" ref={ref}>
-      {/* HUGE background number */}
-      <div className="absolute -top-10 right-0 pointer-events-none select-none opacity-[0.04]">
-        <span className="font-serif-display italic text-[40vw] md:text-[28vw] leading-none text-primary font-bold">
-          23
-        </span>
-      </div>
-
+    <section
+      id="apropos"
+      className="py-28 md:py-36 bg-background relative overflow-hidden"
+      ref={ref}
+    >
       <div className="container mx-auto px-4 relative">
-        {/* Big eyebrow header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7 }}
-          className="grid lg:grid-cols-12 gap-8 mb-20"
-        >
-          <div className="lg:col-span-4">
-            <p className="text-gold-dark uppercase tracking-[0.4em] text-xs font-semibold mb-4 flex items-center gap-3">
-              <span className="h-px w-8 bg-gold-dark" />
+        {/* Chapter header */}
+        <div className="grid lg:grid-cols-12 gap-6 items-end mb-16">
+          <div className="lg:col-span-3">
+            <p className="number-tag text-gold-dark">— Chapitre 02</p>
+            <p className="font-mono-tag text-[10px] uppercase tracking-[0.3em] text-foreground/40 mt-2">
               Notre Histoire
             </p>
           </div>
-          <div className="lg:col-span-8">
-            <h2 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold text-foreground leading-[0.95] tracking-tight">
-              Une institution
-              <span className="block font-serif-display italic font-light text-gold-dark">
-                d'exception.
-              </span>
-            </h2>
-          </div>
-        </motion.div>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.7 }}
+            className="lg:col-span-9 text-display-xl text-foreground text-[12vw] md:text-[7vw] lg:text-[5.5vw]"
+          >
+            Une institution
+            <span className="italic font-light text-gold-dark"> d'exception.</span>
+          </motion.h2>
+        </div>
 
-        {/* Image + text large */}
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center mb-28">
+        <div className="editorial-rule mb-16" />
+
+        {/* Editorial body — 3 columns */}
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 mb-24">
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="lg:col-span-7 relative"
+            initial={{ opacity: 0, y: 30 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.7 }}
+            className="lg:col-span-5 relative"
           >
             <div className="relative">
               <img
                 src={classroomImg}
                 alt="Salle de classe ECSG"
-                className="rounded-3xl shadow-mega w-full object-cover aspect-[4/3]"
+                className="w-full object-cover aspect-[4/5] grayscale-[20%] hover:grayscale-0 transition-all duration-700"
               />
-              {/* Floating badge */}
-              <div className="absolute -bottom-8 -right-4 md:-right-12 bg-gradient-gold text-primary font-display font-bold p-6 md:p-8 rounded-2xl shadow-glow-gold rotate-[-3deg]">
-                <p className="text-5xl md:text-6xl leading-none">23+</p>
-                <p className="text-xs md:text-sm font-body font-medium uppercase tracking-widest mt-2">
-                  Années d'Excellence
-                </p>
-              </div>
-              {/* Decorative quote card */}
-              <div className="absolute -top-6 -left-6 md:-left-10 hidden md:block bg-card border border-border shadow-elegant p-5 rounded-xl max-w-[220px]">
-                <Quote className="w-5 h-5 text-gold mb-2" />
-                <p className="text-foreground/80 text-xs italic font-display leading-relaxed">
-                  Fondée le 16 septembre 2002 par M. DOSSEH Kokou Beaugars.
-                </p>
+              <div className="absolute -bottom-4 left-0 right-0 flex items-center justify-between px-1 text-foreground/60 font-mono-tag text-[10px] uppercase tracking-[0.25em]">
+                <span>Fig. 02 — Salle de classe</span>
+                <span>Yokoé, Lomé</span>
               </div>
             </div>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="lg:col-span-5 space-y-6"
+            initial={{ opacity: 0, y: 30 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.7, delay: 0.15 }}
+            className="lg:col-span-7 lg:pl-8 lg:border-l border-foreground/10"
           >
-            <p className="text-foreground text-xl md:text-2xl font-display leading-relaxed">
+            <p className="number-tag text-gold-dark mb-4">§ 01 — Préambule</p>
+            <p className="font-fraunces text-2xl md:text-3xl leading-snug text-foreground first-letter:font-fraunces first-letter:text-7xl first-letter:font-medium first-letter:float-left first-letter:mr-3 first-letter:leading-none first-letter:text-gold-dark">
               Au cœur de Yokoé, à Lomé, l'École Chrétienne Sola Gratia s'impose comme un phare d'excellence dans le paysage éducatif togolais.
             </p>
-            <p className="text-muted-foreground leading-relaxed">
-              Notre philosophie pédagogique repose sur une approche holistique où rigueur intellectuelle, épanouissement spirituel et développement du caractère se conjuguent harmonieusement pour forger des personnalités d'exception.
-            </p>
-            <p className="text-muted-foreground leading-relaxed">
-              Les performances remarquables obtenues par nos apprenants aux examens nationaux — CEPD, BEPC et Baccalauréat — constituent la preuve tangible de la qualité de notre encadrement.
-            </p>
+
+            <div className="grid sm:grid-cols-2 gap-8 mt-10">
+              <div>
+                <p className="number-tag text-gold-dark mb-3">§ 02</p>
+                <p className="text-foreground/70 leading-relaxed text-sm md:text-base">
+                  Notre philosophie pédagogique repose sur une approche holistique où rigueur intellectuelle, épanouissement spirituel et développement du caractère se conjuguent harmonieusement pour forger des personnalités d'exception.
+                </p>
+              </div>
+              <div>
+                <p className="number-tag text-gold-dark mb-3">§ 03</p>
+                <p className="text-foreground/70 leading-relaxed text-sm md:text-base">
+                  Les performances remarquables obtenues par nos apprenants aux examens nationaux — CEPD, BEPC et Baccalauréat — constituent la preuve tangible de la qualité de notre encadrement.
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-10 flex items-center gap-6 border-t border-foreground/10 pt-6">
+              <span className="font-fraunces italic text-5xl text-gold-dark leading-none">23+</span>
+              <p className="font-mono-tag text-[11px] uppercase tracking-[0.25em] text-foreground/60 leading-relaxed">
+                Années d'excellence<br />
+                <span className="text-foreground/40">Fondée le 16 sept. 2002 par M. DOSSEH Kokou Beaugars</span>
+              </p>
+            </div>
           </motion.div>
         </div>
 
-        {/* Mission - massive card */}
+        {/* Mission ledger — full bleed dark */}
         <motion.div
-          initial={{ opacity: 0, y: 60 }}
+          initial={{ opacity: 0, y: 40 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="relative bg-gradient-navy rounded-3xl p-10 md:p-16 lg:p-20 overflow-hidden shadow-mega"
+          transition={{ duration: 0.8 }}
+          className="bg-navy text-primary-foreground relative overflow-hidden"
         >
-          <div className="absolute inset-0 bg-grid-gold opacity-30 pointer-events-none" />
-          <div className="absolute -top-20 -right-20 w-96 h-96 rounded-full bg-gold/10 blur-3xl" />
-
-          <div className="relative grid lg:grid-cols-12 gap-10">
+          <div className="grain-overlay" />
+          <div className="relative grid lg:grid-cols-12 gap-10 p-10 md:p-16 lg:p-20">
             <div className="lg:col-span-5">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 rounded-xl bg-gold/15 flex items-center justify-center">
-                  <Target className="w-6 h-6 text-gold" />
-                </div>
-                <p className="text-gold uppercase tracking-[0.3em] text-xs font-semibold">
-                  Notre Mission
-                </p>
-              </div>
-              <h3 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground leading-tight mb-6">
+              <p className="number-tag text-gold mb-6">— Notre Mission</p>
+              <h3 className="text-display-xl text-primary-foreground text-5xl md:text-6xl">
                 Former une génération
-                <span className="block font-serif-display italic font-light text-gradient-gold">
-                  d'excellence.
-                </span>
+                <span className="italic font-light text-gradient-gold"> d'excellence.</span>
               </h3>
-              <p className="text-primary-foreground/70 italic font-display text-base md:text-lg leading-relaxed border-l-2 border-gold pl-5">
+              <p className="mt-8 font-fraunces italic text-lg text-primary-foreground/70 border-l border-gold pl-5 leading-snug">
                 «&nbsp;Intègre, compétente, inspirée par les valeurs chrétiennes authentiques et préparée aux défis du monde contemporain.&nbsp;»
               </p>
             </div>
 
-            <div className="lg:col-span-7 grid sm:grid-cols-2 gap-x-6 gap-y-4">
-              {missions.map((m, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={inView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ delay: 0.5 + i * 0.05, duration: 0.4 }}
-                  className="flex gap-3 items-start"
-                >
-                  <CheckCircle className="w-5 h-5 text-gold shrink-0 mt-0.5" />
-                  <p className="text-primary-foreground/75 text-sm leading-relaxed">{m}</p>
-                </motion.div>
-              ))}
+            <div className="lg:col-span-7 lg:pl-8 lg:border-l border-primary-foreground/15">
+              <ol className="space-y-0">
+                {missions.map((m, i) => (
+                  <motion.li
+                    key={i}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={inView ? { opacity: 1, x: 0 } : {}}
+                    transition={{ delay: 0.4 + i * 0.05, duration: 0.4 }}
+                    className="ticker-row-dark group"
+                  >
+                    <span className="font-mono-tag text-[10px] tracking-[0.2em] text-gold w-8 shrink-0">
+                      M.{String(i + 1).padStart(2, "0")}
+                    </span>
+                    <CheckCircle className="w-3.5 h-3.5 text-gold/70 shrink-0" />
+                    <p className="text-primary-foreground/80 text-sm md:text-base font-fraunces group-hover:text-gold transition-colors">
+                      {m}
+                    </p>
+                  </motion.li>
+                ))}
+              </ol>
             </div>
           </div>
         </motion.div>

@@ -1,15 +1,15 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Camera, ArrowRight, Sparkles } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import culturalDay1 from "@/assets/cultural-day-1.jpg";
 import promoFlyer from "@/assets/promo-flyer.jpeg";
 import classroom from "@/assets/classroom.jpg";
 
 const photos = [
-  { src: culturalDay1, label: "Journée Traditionnelle", tag: "Semaine Culturelle" },
-  { src: promoFlyer, label: "Affiche Officielle", tag: "Communication" },
-  { src: classroom, label: "Vie de Classe", tag: "Quotidien" },
+  { src: culturalDay1, label: "Journée Traditionnelle", tag: "Semaine Culturelle", num: "01" },
+  { src: promoFlyer, label: "Affiche Officielle", tag: "Communication", num: "02" },
+  { src: classroom, label: "Vie de Classe", tag: "Quotidien", num: "03" },
 ];
 
 const GallerySection = () => {
@@ -19,83 +19,91 @@ const GallerySection = () => {
   return (
     <section
       id="galerie"
-      className="py-32 md:py-40 bg-gradient-navy relative overflow-hidden"
+      className="py-28 md:py-36 bg-cream relative overflow-hidden"
       ref={ref}
     >
-      {/* Decorative blobs + grid */}
-      <div className="absolute inset-0 bg-grid-gold opacity-30 mask-fade-b pointer-events-none" />
-      <div className="absolute inset-0 opacity-20 pointer-events-none">
-        <div className="absolute top-1/4 -left-20 w-[500px] h-[500px] rounded-full bg-gold blur-3xl animate-float-slow" />
-        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-gold-dark blur-3xl" />
-      </div>
-
-      {/* Big background word */}
-      <span className="absolute -top-10 left-0 right-0 text-center font-serif-display italic text-[24vw] leading-none text-primary-foreground/[0.04] select-none pointer-events-none">
-        Galerie
-      </span>
-
       <div className="container mx-auto px-4 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          className="grid lg:grid-cols-12 gap-8 mb-16 items-end"
-        >
-          <div className="lg:col-span-8">
-            <p className="text-gold uppercase tracking-[0.4em] text-xs font-semibold mb-6 flex items-center gap-3">
-              <Sparkles className="w-4 h-4" /> Vie Scolaire
+        <div className="grid lg:grid-cols-12 gap-6 items-end mb-12">
+          <div className="lg:col-span-3">
+            <p className="number-tag text-gold-dark">— Chapitre 06</p>
+            <p className="font-mono-tag text-[10px] uppercase tracking-[0.3em] text-foreground/40 mt-2">
+              Vie Scolaire
             </p>
-            <h2 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold text-primary-foreground leading-[0.95] tracking-tight">
-              Les moments
-              <span className="block font-serif-display italic font-light text-gradient-gold">
-                qui marquent.
-              </span>
-            </h2>
           </div>
-          <div className="lg:col-span-4 lg:text-right">
-            <p className="text-primary-foreground/60 mb-6">
-              Photographies de la vie quotidienne, des temps forts culturels et de l'engagement de nos élèves.
-            </p>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.7 }}
+            className="lg:col-span-7 text-display-xl text-foreground text-[12vw] md:text-[7vw] lg:text-[5.5vw]"
+          >
+            Les moments
+            <span className="italic font-light text-gold-dark"> qui marquent.</span>
+          </motion.h2>
+          <div className="lg:col-span-2 flex lg:justify-end">
             <Link
               to="/galerie"
-              className="inline-flex items-center gap-2 bg-gradient-gold text-primary font-semibold px-6 py-3 rounded-full hover:shadow-glow-gold transition-all"
+              className="group inline-flex items-center gap-2 font-mono-tag text-[11px] uppercase tracking-[0.25em] text-foreground/70 hover:text-gold-dark"
             >
-              Galerie complète
-              <ArrowRight className="w-4 h-4" />
+              <span className="hover-underline">Galerie complète</span>
+              <ArrowUpRight className="w-3.5 h-3.5" />
             </Link>
           </div>
-        </motion.div>
+        </div>
 
-        {/* Asymmetric photo grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-4 md:h-[640px]">
-          {photos.map((photo, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 30 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.15 + i * 0.12, duration: 0.6 }}
-              className={`group relative rounded-3xl overflow-hidden ring-1 ring-gold/20 ${
-                i === 0 ? "md:row-span-2" : ""
-              }`}
-            >
-              <img
-                src={photo.src}
-                alt={photo.label}
-                className="w-full h-full min-h-[260px] object-cover group-hover:scale-110 transition-transform duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/30 to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
-                <p className="text-gold text-xs uppercase tracking-widest font-semibold mb-2">
-                  {photo.tag}
-                </p>
-                <p className="text-primary-foreground font-display text-2xl md:text-3xl font-bold leading-tight">
-                  {photo.label}
-                </p>
-              </div>
-              <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-card/90 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                <Camera className="w-4 h-4 text-primary" />
-              </div>
-            </motion.div>
-          ))}
+        <div className="editorial-rule mb-8" />
+
+        {/* Asymmetric magazine grid */}
+        <div className="grid grid-cols-12 gap-3 md:gap-5">
+          {/* Big left */}
+          <motion.figure
+            initial={{ opacity: 0, y: 30 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
+            className="col-span-12 md:col-span-7 group relative overflow-hidden aspect-[4/5] md:aspect-[5/6]"
+          >
+            <img
+              src={photos[0].src}
+              alt={photos[0].label}
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+            <div className="absolute top-4 left-4 right-4 flex items-center justify-between text-primary-foreground/90 font-mono-tag text-[10px] uppercase tracking-[0.25em]">
+              <span>Fig. {photos[0].num}</span>
+              <span>{photos[0].tag}</span>
+            </div>
+            <figcaption className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-navy/95 via-navy/40 to-transparent p-6 md:p-8">
+              <p className="font-fraunces text-3xl md:text-5xl text-primary-foreground leading-tight">
+                {photos[0].label}<span className="text-gold">.</span>
+              </p>
+            </figcaption>
+          </motion.figure>
+
+          {/* Right column */}
+          <div className="col-span-12 md:col-span-5 flex flex-col gap-3 md:gap-5">
+            {photos.slice(1).map((p, i) => (
+              <motion.figure
+                key={p.label}
+                initial={{ opacity: 0, y: 30 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.15 + i * 0.1 }}
+                className="group relative overflow-hidden aspect-[4/3] flex-1"
+              >
+                <img
+                  src={p.src}
+                  alt={p.label}
+                  className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                />
+                <div className="absolute top-3 left-3 right-3 flex items-center justify-between text-primary-foreground/90 font-mono-tag text-[10px] uppercase tracking-[0.25em]">
+                  <span>Fig. {p.num}</span>
+                  <span>{p.tag}</span>
+                </div>
+                <figcaption className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-navy/95 via-navy/30 to-transparent p-5">
+                  <p className="font-fraunces text-2xl md:text-3xl text-primary-foreground leading-tight">
+                    {p.label}<span className="text-gold">.</span>
+                  </p>
+                </figcaption>
+              </motion.figure>
+            ))}
+          </div>
         </div>
       </div>
     </section>

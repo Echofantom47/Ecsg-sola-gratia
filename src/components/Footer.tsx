@@ -1,106 +1,119 @@
-import { MapPin, Phone, Mail } from "lucide-react";
+import { MapPin, Phone, Mail, ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import logoEcsg from "@/assets/logo-ecsg.jpg";
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-navy-dark pt-16 pb-8">
-      <div className="container mx-auto px-4">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
-          {/* Brand */}
-          <div className="lg:col-span-1">
-            <div className="flex items-center gap-3 mb-4">
-              <img src={logoEcsg} alt="Logo ECSG" className="w-12 h-12 rounded-full border-2 border-gold" />
-              <div>
-                <p className="font-display text-sm font-bold text-primary-foreground">École Chrétienne</p>
-                <p className="text-gradient-gold font-display font-bold">Sola Gratia</p>
-              </div>
-            </div>
-            <p className="text-primary-foreground/50 text-sm leading-relaxed mb-4">
+    <footer className="bg-navy text-primary-foreground relative overflow-hidden pt-20 pb-8">
+      <div className="grain-overlay" />
+      <div className="container mx-auto px-4 relative">
+        {/* Mega title */}
+        <div className="grid lg:grid-cols-12 gap-6 items-end pb-12 border-b border-primary-foreground/15">
+          <div className="lg:col-span-3">
+            <p className="number-tag text-gold">— Colophon</p>
+            <p className="font-mono-tag text-[10px] uppercase tracking-[0.3em] text-primary-foreground/40 mt-2">
+              Édition 2025
+            </p>
+          </div>
+          <h2 className="lg:col-span-9 text-display-xl text-primary-foreground text-[14vw] md:text-[9vw] lg:text-[7vw]">
+            Sola
+            <span className="italic font-light text-gradient-gold"> Gratia.</span>
+          </h2>
+        </div>
+
+        {/* Columns */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 py-14">
+          <div>
+            <p className="number-tag text-gold mb-4">— L'Institution</p>
+            <p className="font-fraunces text-lg leading-snug text-primary-foreground/85 mb-4">
               Institution d'excellence éducative depuis 2002, formant des leaders intègres guidés par les valeurs chrétiennes authentiques.
             </p>
-            <p className="text-gold/70 italic text-sm font-display">
-              «&nbsp;Par la seule grâce de Dieu, nous accomplissons des exploits remarquables&nbsp;»
+            <p className="font-fraunces italic text-sm text-gold/80">
+              «&nbsp;Par la seule grâce de Dieu, nous accomplissons des exploits remarquables.&nbsp;»
             </p>
           </div>
 
-          {/* Programs */}
           <div>
-            <h4 className="font-display font-bold text-primary-foreground mb-4">Nos Programmes</h4>
-            <ul className="space-y-2 text-primary-foreground/50 text-sm">
-              <li><Link to="/programmes" className="hover:text-gold transition-colors">École Maternelle</Link></li>
-              <li><Link to="/programmes" className="hover:text-gold transition-colors">École Primaire</Link></li>
-              <li><Link to="/programmes" className="hover:text-gold transition-colors">Collège d'Excellence</Link></li>
-              <li><Link to="/programmes" className="hover:text-gold transition-colors">Lycée Sola Gratia</Link></li>
-              <li className="text-gold/60">Sections A4, C et D</li>
+            <p className="number-tag text-gold mb-4">— Programmes</p>
+            <ul className="space-y-2.5 font-fraunces text-base">
+              {[
+                ["École Maternelle", "/programmes"],
+                ["École Primaire", "/programmes"],
+                ["Collège d'Excellence", "/programmes"],
+                ["Lycée Sola Gratia", "/programmes"],
+              ].map(([label, href]) => (
+                <li key={label}>
+                  <Link
+                    to={href}
+                    className="text-primary-foreground/70 hover:text-gold transition-colors hover-underline"
+                  >
+                    {label}
+                  </Link>
+                </li>
+              ))}
+              <li className="text-gold/70 font-mono-tag text-[11px] uppercase tracking-[0.25em] pt-2">
+                Sections A4, C et D
+              </li>
             </ul>
           </div>
 
-          {/* Contact */}
           <div>
-            <h4 className="font-display font-bold text-primary-foreground mb-4">Contact</h4>
-            <ul className="space-y-3 text-primary-foreground/50 text-sm">
+            <p className="number-tag text-gold mb-4">— Contact</p>
+            <ul className="space-y-3 text-primary-foreground/70 text-sm">
               <li className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 shrink-0 mt-0.5 text-gold/60" />
-                <span>Quartier Yokoé, Lomé<br />République Togolaise</span>
+                <span className="font-fraunces">Quartier Yokoé, Lomé<br />République Togolaise</span>
               </li>
               <li className="flex items-start gap-2">
                 <Phone className="w-4 h-4 shrink-0 mt-0.5 text-gold/60" />
-                <span>+228 90 07 10 65<br />+228 91 47 74 56</span>
+                <span className="font-fraunces tabular-nums">+228 90 07 10 65<br />+228 91 47 74 56</span>
               </li>
               <li className="flex items-start gap-2">
                 <Mail className="w-4 h-4 shrink-0 mt-0.5 text-gold/60" />
-                <span>Ecolesolagratia2002@gmail.com</span>
+                <span className="font-fraunces break-all">Ecolesolagratia2002@gmail.com</span>
               </li>
             </ul>
           </div>
 
-          {/* Values + Social */}
           <div>
-            <h4 className="font-display font-bold text-primary-foreground mb-4">Nos Valeurs</h4>
-            <ul className="space-y-2 text-primary-foreground/50 text-sm mb-6">
+            <p className="number-tag text-gold mb-4">— Valeurs</p>
+            <ul className="space-y-2 font-fraunces text-base text-primary-foreground/70">
               <li>Excellence Académique</li>
-              <li>Intégrité et Caractère</li>
-              <li>Foi et Spiritualité</li>
-              <li>Leadership et Service</li>
+              <li>Intégrité & Caractère</li>
+              <li>Foi & Spiritualité</li>
+              <li>Leadership & Service</li>
               <li>Innovation Pédagogique</li>
             </ul>
-            <h4 className="font-display font-bold text-primary-foreground mb-3">Suivez-nous</h4>
+            <p className="number-tag text-gold mt-6 mb-3">— Suivez-nous</p>
             <a
               href="https://www.tiktok.com/@ecolechretiennesolagrat6"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-primary-foreground/50 hover:text-gold transition-colors text-sm"
+              className="group inline-flex items-center gap-2 text-primary-foreground/70 hover:text-gold font-mono-tag text-[11px] uppercase tracking-[0.25em] transition-colors"
             >
-              <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg">
-                <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.34-6.34V9.28a8.26 8.26 0 004.76 1.5v-3.45a4.85 4.85 0 01-1-.64z"/>
-              </svg>
               TikTok
+              <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </a>
           </div>
         </div>
 
-        <div className="border-t border-primary-foreground/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex flex-col sm:flex-row items-center gap-3">
-            <p className="text-primary-foreground/40 text-sm italic font-display">
-              «&nbsp;Je puis tout par celui qui me fortifie&nbsp;» — Philippiens 4:13
-            </p>
+        {/* Bottom bar */}
+        <div className="border-t border-primary-foreground/15 pt-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 font-mono-tag text-[10px] uppercase tracking-[0.25em] text-primary-foreground/50">
+          <p className="not-italic">
+            «&nbsp;Je puis tout par celui qui me fortifie.&nbsp;» — Philippiens 4:13
+          </p>
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
             <a
               href="https://echofantom47.github.io/solagratia/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gold/50 hover:text-gold text-xs transition-colors"
+              className="text-gold/70 hover:text-gold transition-colors"
             >
-              Voir l'ancien site
+              Voir l'ancien site →
             </a>
-          </div>
-          <div className="text-right">
-            <p className="text-primary-foreground/30 text-xs">
-              © 2025 École Chrétienne Sola Gratia. Tous droits réservés.
-            </p>
-            <p className="text-primary-foreground/30 text-xs mt-1">
-              Développé avec excellence par <span className="text-gold/60 font-semibold">FNT Fantom Network Technologies</span>
-            </p>
+            <span>© 2025 ECSG</span>
+            <span className="text-primary-foreground/35">
+              Développé avec excellence par <span className="text-gold/70">FNT Fantom Network Technologies</span>
+            </span>
           </div>
         </div>
       </div>
