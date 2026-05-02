@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,300;1,9..144,400;1,9..144,500;1,9..144,600;1,9..144,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -162,6 +162,69 @@
   .animate-float-slow {
     animation: float-slow 7s ease-in-out infinite;
   }
+
+  /* === New editorial design system === */
+  .font-mono-tag {
+    font-family: 'Space Grotesk', 'JetBrains Mono', ui-monospace, monospace;
+    letter-spacing: 0.02em;
+  }
+  .font-fraunces {
+    font-family: 'Fraunces', 'Cormorant Garamond', Georgia, serif;
+    font-optical-sizing: auto;
+  }
+  .text-display-xl {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 500;
+    line-height: 0.88;
+    letter-spacing: -0.045em;
+  }
+  .editorial-rule {
+    height: 1px;
+    background: hsl(var(--foreground) / 0.18);
+  }
+  .editorial-rule-light {
+    height: 1px;
+    background: hsl(var(--primary-foreground) / 0.18);
+  }
+  .number-tag {
+    @apply font-mono-tag text-[11px] tracking-[0.2em] uppercase;
+  }
+  .ticker-row {
+    @apply flex items-center gap-3 py-3 border-b;
+    border-color: hsl(var(--foreground) / 0.12);
+  }
+  .ticker-row-dark {
+    @apply flex items-center gap-3 py-3 border-b;
+    border-color: hsl(var(--primary-foreground) / 0.14);
+  }
+  .grain-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.35;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  }
+  .hover-underline {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0% 1px;
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    transition: background-size 0.4s ease;
+  }
+  .hover-underline:hover {
+    background-size: 100% 1px;
+  }
+  .corner-frame::before,
+  .corner-frame::after {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border: 1px solid hsl(var(--gold));
+  }
+  .corner-frame::before { top: 0; left: 0; border-right: none; border-bottom: none; }
+  .corner-frame::after { bottom: 0; right: 0; border-left: none; border-top: none; }
 }
 
 html {
