@@ -163,6 +163,18 @@
     animation: float-slow 7s ease-in-out infinite;
   }
 
+  @keyframes blob-drift {
+    0%, 100% { transform: translate(0px, 0px) scale(1); }
+    33% { transform: translate(60px, -40px) scale(1.1); }
+    66% { transform: translate(-40px, 50px) scale(0.95); }
+  }
+  .animate-blob-slow {
+    animation: blob-drift 18s ease-in-out infinite;
+  }
+  .animate-blob-slower {
+    animation: blob-drift 26s ease-in-out infinite reverse;
+  }
+
   /* === New editorial design system === */
   .font-mono-tag {
     font-family: 'Space Grotesk', 'JetBrains Mono', ui-monospace, monospace;
