@@ -1,0 +1,16 @@
+{
+  "name": "École Chrétienne Sola Gratia",
+  "short_name": "Sola Gratia",
+  "description": "Institution d'excellence éducative à Lomé, Togo.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a1f44",
+  "theme_color": "#0a1f44",
+  "icons": [
+    {
+      "src": "/placeholder.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
