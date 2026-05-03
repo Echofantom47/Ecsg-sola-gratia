@@ -1,7 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { CheckCircle } from "lucide-react";
-import classroomImg from "@/assets/classroom.jpg";
+import classroomImg from "@/assets/affiche-eduquer.png";
 
 const missions = [
   "Enseignement de qualité conforme aux programmes officiels du Togo",
@@ -56,9 +56,13 @@ const AboutSection = () => {
             <div className="relative">
               <img
                 src={classroomImg}
-                alt="Salle de classe ECSG"
-                className="w-full object-cover aspect-[4/5] grayscale-[20%] hover:grayscale-0 transition-all duration-700"
+                alt="Affiche officielle - Éduquer pour la gloire de Dieu"
+                className="w-full object-cover aspect-[3/4] hover:scale-[1.02] transition-all duration-700"
               />
+              <div className="absolute -bottom-4 left-0 right-0 flex items-center justify-between px-1 text-foreground/60 font-mono-tag text-[10px] uppercase tracking-[0.25em]">
+                <span>Fig. 02 — Affiche Officielle</span>
+                <span>Yokoé, Lomé</span>
+              </div>
               <div className="absolute -bottom-4 left-0 right-0 flex items-center justify-between px-1 text-foreground/60 font-mono-tag text-[10px] uppercase tracking-[0.25em]">
                 <span>Fig. 02 — Salle de classe</span>
                 <span>Yokoé, Lomé</span>
