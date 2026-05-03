@@ -1,7 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { CheckCircle } from "lucide-react";
-import classroomImg from "@/assets/classroom.jpg";
+import classroomImg from "@/assets/affiche-eduquer.png";
 
 const missions = [
   "Enseignement de qualité conforme aux programmes officiels du Togo",
