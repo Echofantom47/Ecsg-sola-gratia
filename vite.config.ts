@@ -51,9 +51,7 @@ export default defineConfig({
             },
           },
           {
-            urlPattern: ({ url }) =>
-              url.origin === self.location.origin &&
-              /\.(?:png|jpg|jpeg|svg|webp|gif|woff2?)$/.test(url.pathname),
+            urlPattern: /\.(?:png|jpg|jpeg|svg|webp|gif|woff2?)$/,
             handler: "CacheFirst",
             options: {
               cacheName: "assets-cache",
