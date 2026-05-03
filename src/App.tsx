@@ -10,6 +10,8 @@ import ProgrammesPage from "./pages/ProgrammesPage";
 import ContactPage from "./pages/ContactPage";
 import VersetsPage from "./pages/VersetsPage";
 import NotFound from "./pages/NotFound";
+import LoadingScreen from "./components/LoadingScreen";
+import AnimatedBackground from "./components/AnimatedBackground";
 
 const queryClient = new QueryClient();
 
@@ -23,6 +25,8 @@ const LegacyGithubRedirect = () => {
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
+      <LoadingScreen />
+      <AnimatedBackground />
       <Toaster />
       <Sonner />
       <BrowserRouter>
