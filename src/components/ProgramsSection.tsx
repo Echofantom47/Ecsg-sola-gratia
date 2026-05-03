@@ -56,7 +56,7 @@ const ProgramsSection = () => {
                 </span>
               </div>
               <div className="col-span-10 md:col-span-4">
-                <p className="number-tag text-foreground/50 mb-3">{p.age}</p>
+                <p className="number-tag text-foreground/50 mb-3">{p.subtitle}</p>
                 <h3 className="text-display-xl text-foreground text-5xl md:text-6xl">
                   {p.title}<span className="text-gold-dark">.</span>
                 </h3>
