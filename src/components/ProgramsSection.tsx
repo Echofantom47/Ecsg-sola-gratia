@@ -7,10 +7,10 @@ import collegeImg from "@/assets/college.jpg";
 import lyceeImg from "@/assets/lycee.jpg";
 
 const programs = [
-  { num: "I", title: "Maternelle", age: "3 — 5 ans", image: maternelleImg, description: "Cadre d'éveil chaleureux où nos tout-petits cultivent curiosité, créativité et premiers apprentissages fondamentaux." },
-  { num: "II", title: "Primaire", age: "6 — 11 ans", image: primaireImg, description: "Le socle de toute réussite. Lecture, écriture, mathématiques et découverte scientifique acquis avec assurance." },
-  { num: "III", title: "Collège", age: "12 — 15 ans", image: collegeImg, description: "Consolidation des savoirs et préparation méthodique au BEPC. Esprit critique, autonomie, discipline." },
-  { num: "IV", title: "Lycée", age: "16 — 19 ans", image: lyceeImg, description: "Parcours abouti en séries A4, C & D. Encadrement rigoureux conduisant à l'excellence au Baccalauréat." },
+  { num: "I", title: "Maternelle", subtitle: "Éveil & Découverte", image: maternelleImg, description: "Cadre d'éveil chaleureux où nos tout-petits cultivent curiosité, créativité et premiers apprentissages fondamentaux." },
+  { num: "II", title: "Primaire", subtitle: "Fondements", image: primaireImg, description: "Le socle de toute réussite. Lecture, écriture, mathématiques et découverte scientifique acquis avec assurance." },
+  { num: "III", title: "Collège", subtitle: "Préparation BEPC", image: collegeImg, description: "Consolidation des savoirs et préparation méthodique au BEPC. Esprit critique, autonomie, discipline." },
+  { num: "IV", title: "Lycée", subtitle: "Séries A4 · C · D", image: lyceeImg, description: "Parcours abouti en séries A4, C & D. Encadrement rigoureux conduisant à l'excellence au Baccalauréat." },
 ];
 
 const ProgramsSection = () => {
@@ -56,7 +56,7 @@ const ProgramsSection = () => {
                 </span>
               </div>
               <div className="col-span-10 md:col-span-4">
-                <p className="number-tag text-foreground/50 mb-3">{p.age}</p>
+                <p className="number-tag text-foreground/50 mb-3">{p.subtitle}</p>
                 <h3 className="text-display-xl text-foreground text-5xl md:text-6xl">
                   {p.title}<span className="text-gold-dark">.</span>
                 </h3>
