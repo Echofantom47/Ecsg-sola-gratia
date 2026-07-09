@@ -43,10 +43,10 @@ const Navbar = () => {
             className="h-10 w-10 md:h-11 md:w-11 rounded-full object-cover ring-1 ring-gold/40"
           />
           <div className="hidden sm:flex flex-col leading-none">
-            <span className={`font-mono-tag text-[10px] tracking-[0.3em] uppercase ${scrolled ? "text-muted-foreground" : "text-primary-foreground/60"}`}>
+            <span className="font-mono-tag text-[10px] tracking-[0.3em] uppercase text-muted-foreground">
               Est. 2002 — Lomé
             </span>
-            <span className={`font-fraunces text-lg font-medium tracking-tight mt-1 ${scrolled ? "text-foreground" : "text-primary-foreground"}`}>
+            <span className="font-fraunces text-lg font-medium tracking-tight mt-1 text-foreground">
               Sola Gratia<span className="text-gold">.</span>
             </span>
           </div>
