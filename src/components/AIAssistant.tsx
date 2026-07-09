@@ -364,24 +364,38 @@ const AIAssistant = () => {
       {/* Greeting bubble */}
       <AnimatePresence>
         {showBubble && !open && (
-          <motion.button
+          <motion.div
             initial={{ opacity: 0, y: 20, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.9 }}
-            onClick={() => {
-              setOpen(true);
-              setShowBubble(false);
-            }}
-            className="fixed bottom-24 right-6 z-50 max-w-[260px] bg-card text-card-foreground rounded-2xl rounded-br-sm shadow-elegant p-4 text-left border border-border hover:shadow-gold transition-shadow"
+            className="fixed bottom-24 right-6 z-50 max-w-[260px] bg-card text-card-foreground rounded-2xl rounded-br-sm shadow-elegant border border-border"
           >
-            <div className="flex items-center gap-2 mb-1">
-              <Sparkles className="w-4 h-4 text-gold" />
-              <span className="text-xs font-semibold text-primary">Assistante ECSG</span>
-            </div>
-            <p className="text-sm">
-              Bonjour 👋 Besoin d'aide pour une information ou inscrire votre enfant ?
-            </p>
-          </motion.button>
+            <button
+              onClick={() => {
+                setShowBubble(false);
+                setHasGreeted(true);
+              }}
+              aria-label="Fermer"
+              className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-foreground text-background flex items-center justify-center shadow hover:bg-gold-dark transition-colors"
+            >
+              <X className="w-3 h-3" />
+            </button>
+            <button
+              onClick={() => {
+                setOpen(true);
+                setShowBubble(false);
+              }}
+              className="text-left p-4 hover:bg-muted/30 rounded-2xl rounded-br-sm transition-colors w-full"
+            >
+              <div className="flex items-center gap-2 mb-1">
+                <Sparkles className="w-4 h-4 text-gold-dark" />
+                <span className="text-xs font-semibold text-primary">Assistante ECSG</span>
+              </div>
+              <p className="text-sm">
+                Bonjour 👋 Besoin d'aide pour une information ou inscrire votre enfant ?
+              </p>
+            </button>
+          </motion.div>
         )}
       </AnimatePresence>
 
