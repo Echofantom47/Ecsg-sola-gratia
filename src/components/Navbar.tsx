@@ -61,10 +61,8 @@ const Navbar = () => {
                 to={link.href}
                 className={`group px-3 py-2 text-sm transition-colors flex items-baseline gap-1.5 ${
                   active
-                    ? "text-gold"
-                    : scrolled
-                    ? "text-foreground/80 hover:text-foreground"
-                    : "text-primary-foreground/80 hover:text-primary-foreground"
+                    ? "text-gold-dark"
+                    : "text-foreground/80 hover:text-foreground"
                 }`}
               >
                 <span className="font-mono-tag text-[9px] opacity-50">{link.num}</span>
