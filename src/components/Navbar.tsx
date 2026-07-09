@@ -31,8 +31,8 @@ const Navbar = () => {
       transition={{ duration: 0.6 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-background/90 backdrop-blur-xl border-b border-foreground/10"
-          : "bg-transparent"
+          ? "bg-background/95 backdrop-blur-xl border-b border-foreground/10 shadow-sm"
+          : "bg-background/80 backdrop-blur-md border-b border-foreground/5"
       }`}
     >
       <div className="container mx-auto flex items-center justify-between px-4 h-16 md:h-20">
