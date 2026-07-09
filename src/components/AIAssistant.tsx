@@ -299,7 +299,7 @@ const AIAssistant = () => {
   // Auto greeting bubble after 5s
   useEffect(() => {
     if (hasGreeted) return;
-    const t = window.setTimeout(() => setShowBubble(true), 5000);
+    const t = window.setTimeout(() => setShowBubble(true), 12000);
     return () => window.clearTimeout(t);
   }, [hasGreeted]);
 
