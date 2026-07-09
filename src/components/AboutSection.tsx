@@ -59,12 +59,8 @@ const AboutSection = () => {
                 alt="Affiche officielle - Éduquer pour la gloire de Dieu"
                 className="w-full object-cover aspect-[3/4] hover:scale-[1.02] transition-all duration-700"
               />
-              <div className="absolute -bottom-4 left-0 right-0 flex items-center justify-between px-1 text-foreground/60 font-mono-tag text-[10px] uppercase tracking-[0.25em]">
+              <div className="mt-3 flex items-center justify-between px-1 text-foreground/60 font-mono-tag text-[10px] uppercase tracking-[0.25em]">
                 <span>Fig. 02 — Affiche Officielle</span>
-                <span>Yokoé, Lomé</span>
-              </div>
-              <div className="absolute -bottom-4 left-0 right-0 flex items-center justify-between px-1 text-foreground/60 font-mono-tag text-[10px] uppercase tracking-[0.25em]">
-                <span>Fig. 02 — Salle de classe</span>
                 <span>Yokoé, Lomé</span>
               </div>
             </div>

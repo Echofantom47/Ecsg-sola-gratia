@@ -31,8 +31,8 @@ const Navbar = () => {
       transition={{ duration: 0.6 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-background/90 backdrop-blur-xl border-b border-foreground/10"
-          : "bg-transparent"
+          ? "bg-background/95 backdrop-blur-xl border-b border-foreground/10 shadow-sm"
+          : "bg-background/80 backdrop-blur-md border-b border-foreground/5"
       }`}
     >
       <div className="container mx-auto flex items-center justify-between px-4 h-16 md:h-20">
@@ -43,10 +43,10 @@ const Navbar = () => {
             className="h-10 w-10 md:h-11 md:w-11 rounded-full object-cover ring-1 ring-gold/40"
           />
           <div className="hidden sm:flex flex-col leading-none">
-            <span className={`font-mono-tag text-[10px] tracking-[0.3em] uppercase ${scrolled ? "text-muted-foreground" : "text-primary-foreground/60"}`}>
+            <span className="font-mono-tag text-[10px] tracking-[0.3em] uppercase text-muted-foreground">
               Est. 2002 — Lomé
             </span>
-            <span className={`font-fraunces text-lg font-medium tracking-tight mt-1 ${scrolled ? "text-foreground" : "text-primary-foreground"}`}>
+            <span className="font-fraunces text-lg font-medium tracking-tight mt-1 text-foreground">
               Sola Gratia<span className="text-gold">.</span>
             </span>
           </div>
@@ -61,10 +61,8 @@ const Navbar = () => {
                 to={link.href}
                 className={`group px-3 py-2 text-sm transition-colors flex items-baseline gap-1.5 ${
                   active
-                    ? "text-gold"
-                    : scrolled
-                    ? "text-foreground/80 hover:text-foreground"
-                    : "text-primary-foreground/80 hover:text-primary-foreground"
+                    ? "text-gold-dark"
+                    : "text-foreground/80 hover:text-foreground"
                 }`}
               >
                 <span className="font-mono-tag text-[9px] opacity-50">{link.num}</span>
@@ -74,7 +72,7 @@ const Navbar = () => {
           })}
           <a
             href="tel:+22890071065"
-            className="ml-4 inline-flex items-center gap-2 border border-gold text-gold font-mono-tag text-[11px] uppercase tracking-[0.18em] px-4 py-2.5 rounded-none hover:bg-gold hover:text-primary transition-colors"
+            className="ml-4 inline-flex items-center gap-2 border border-gold-dark text-gold-dark font-mono-tag text-[11px] uppercase tracking-[0.18em] px-4 py-2.5 rounded-none hover:bg-gold-dark hover:text-primary-foreground transition-colors"
           >
             <Phone className="w-3.5 h-3.5" />
             Inscription →
@@ -83,7 +81,7 @@ const Navbar = () => {
 
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className={`lg:hidden p-2 ${scrolled ? "text-foreground" : "text-primary-foreground"}`}
+          className="lg:hidden p-2 text-foreground"
           aria-label="Menu"
         >
           {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
