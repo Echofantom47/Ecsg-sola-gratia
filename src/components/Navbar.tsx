@@ -72,7 +72,7 @@ const Navbar = () => {
           })}
           <a
             href="tel:+22890071065"
-            className="ml-4 inline-flex items-center gap-2 border border-gold text-gold font-mono-tag text-[11px] uppercase tracking-[0.18em] px-4 py-2.5 rounded-none hover:bg-gold hover:text-primary transition-colors"
+            className="ml-4 inline-flex items-center gap-2 border border-gold-dark text-gold-dark font-mono-tag text-[11px] uppercase tracking-[0.18em] px-4 py-2.5 rounded-none hover:bg-gold-dark hover:text-primary-foreground transition-colors"
           >
             <Phone className="w-3.5 h-3.5" />
             Inscription →
