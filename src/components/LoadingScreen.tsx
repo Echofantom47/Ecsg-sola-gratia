@@ -25,24 +25,17 @@ const LoadingScreen = () => {
     <div
       className="fixed inset-0 z-[9999] flex flex-col items-center justify-center transition-opacity duration-500"
       style={{
-        background: "linear-gradient(135deg, hsl(217 72% 15%), hsl(217 72% 22%), hsl(217 60% 30%))",
+        background: "hsl(var(--primary))",
         opacity: progress >= 100 ? 0 : 1,
       }}
     >
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full blur-3xl opacity-30 animate-pulse"
-             style={{ background: "hsl(45 90% 55%)" }} />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full blur-3xl opacity-20 animate-pulse"
-             style={{ background: "hsl(217 80% 50%)", animationDelay: "1s" }} />
-      </div>
-
       <div className="relative z-10 flex flex-col items-center gap-8 px-6">
         <div className="text-center">
-          <p className="font-mono-tag text-[11px] tracking-[0.4em] uppercase text-gold mb-4">
+          <p className="mb-4 text-[11px] font-bold uppercase tracking-[0.18em] text-primary-foreground/65">
             École Chrétienne
           </p>
-          <h1 className="font-fraunces text-5xl md:text-7xl text-primary-foreground italic font-light">
-            Sola Gratia<span className="text-gold">.</span>
+          <h1 className="font-display text-5xl font-semibold text-primary-foreground md:text-7xl">
+            Sola Gratia
           </h1>
         </div>
 
@@ -51,9 +44,9 @@ const LoadingScreen = () => {
             Chargement
           </span>
           <span className="flex gap-1">
-            <span className="w-1.5 h-1.5 rounded-full bg-gold animate-bounce" style={{ animationDelay: "0ms" }} />
-            <span className="w-1.5 h-1.5 rounded-full bg-gold animate-bounce" style={{ animationDelay: "150ms" }} />
-            <span className="w-1.5 h-1.5 rounded-full bg-gold animate-bounce" style={{ animationDelay: "300ms" }} />
+            <span className="h-1.5 w-1.5 rounded-full bg-primary-foreground animate-bounce" />
+            <span className="h-1.5 w-1.5 rounded-full bg-primary-foreground animate-bounce" style={{ animationDelay: "150ms" }} />
+            <span className="h-1.5 w-1.5 rounded-full bg-primary-foreground animate-bounce" style={{ animationDelay: "300ms" }} />
           </span>
         </div>
 
@@ -63,7 +56,7 @@ const LoadingScreen = () => {
               className="h-full transition-all duration-100 ease-out"
               style={{
                 width: `${progress}%`,
-                background: "linear-gradient(90deg, hsl(40 85% 40%), hsl(45 90% 55%), hsl(45 85% 70%))",
+                background: "hsl(var(--primary-foreground))",
               }}
             />
           </div>

@@ -9,6 +9,10 @@ import AProposPage from "./pages/AProposPage";
 import ProgrammesPage from "./pages/ProgrammesPage";
 import ContactPage from "./pages/ContactPage";
 import VersetsPage from "./pages/VersetsPage";
+import CyclePage from "./pages/CyclePage";
+import AdmissionsPage from "./pages/AdmissionsPage";
+import EditorialPage from "./pages/EditorialPage";
+import LegalPage from "./pages/LegalPage";
 import NotFound from "./pages/NotFound";
 import LoadingScreen from "./components/LoadingScreen";
 import AnimatedBackground from "./components/AnimatedBackground";
@@ -34,10 +38,18 @@ const App = () => (
           <Route path="/Ecsg-sola-gratia/*" element={<LegacyGithubRedirect />} />
           <Route path="/" element={<Index />} />
           <Route path="/a-propos" element={<AProposPage />} />
+          <Route path="/ecole" element={<AProposPage />} />
           <Route path="/programmes" element={<ProgrammesPage />} />
+          <Route path="/programmes/:cycle" element={<CyclePage />} />
+          <Route path="/admissions" element={<AdmissionsPage />} />
+          <Route path="/actualites" element={<EditorialPage mode="actualites" />} />
+          <Route path="/actualites/article" element={<EditorialPage mode="actualites" />} />
+          <Route path="/evenements" element={<EditorialPage mode="evenements" />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/galerie" element={<GaleriePage />} />
           <Route path="/versets" element={<VersetsPage />} />
+          <Route path="/mentions-legales" element={<LegalPage />} />
+          <Route path="/confidentialite" element={<LegalPage privacy />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

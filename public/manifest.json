@@ -4,8 +4,8 @@
   "description": "Institution d'excellence éducative à Lomé, Togo.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0a1f44",
-  "theme_color": "#0a1f44",
+  "background_color": "#FFFFFF",
+  "theme_color": "#0B3A82",
   "icons": [
     {
       "src": "/placeholder.svg",
