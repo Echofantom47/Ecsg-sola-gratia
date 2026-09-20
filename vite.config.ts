@@ -23,8 +23,8 @@ export default defineConfig({
         description: "Institution d'excellence éducative à Lomé, Togo.",
         start_url: "/",
         display: "standalone",
-        background_color: "#0a1f44",
-        theme_color: "#0a1f44",
+        background_color: "#FFFFFF",
+        theme_color: "#0B3A82",
         icons: [
           { src: "/placeholder.svg", sizes: "any", type: "image/svg+xml", purpose: "any" },
         ],
@@ -51,7 +51,7 @@ export default defineConfig({
             },
           },
           {
-            urlPattern: /\.(?:png|jpg|jpeg|svg|webp|gif|woff2?)$/,
+            urlPattern: /\.(?:png|jpg|jpeg|svg|webp|gif|woff2?|mp4)$/,
             handler: "CacheFirst",
             options: {
               cacheName: "assets-cache",
