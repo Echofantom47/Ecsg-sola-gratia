@@ -1,16 +1,17 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, ChevronDown, ArrowRight } from "lucide-react";
 import logoEcsg from "@/assets/logo-ecsg.jpg";
+import { Button } from "@/components/ui/button";
 
 const navLinks = [
-  { num: "01", label: "Accueil", href: "/" },
-  { num: "02", label: "À Propos", href: "/a-propos" },
-  { num: "03", label: "Programmes", href: "/programmes" },
-  { num: "04", label: "Versets", href: "/versets" },
-  { num: "05", label: "Galerie", href: "/galerie" },
-  { num: "06", label: "Contact", href: "/contact" },
+  { label: "L’École", href: "/ecole", children: [{ label: "À propos", href: "/a-propos" }, { label: "La Bible", href: "/versets" }] },
+  { label: "Programmes", href: "/programmes", children: [{ label: "Maternelle", href: "/programmes/maternelle" }, { label: "Primaire", href: "/programmes/primaire" }, { label: "Collège", href: "/programmes/college" }, { label: "Lycée", href: "/programmes/lycee" }] },
+  { label: "Vie scolaire", href: "/galerie" },
+  { label: "Actualités", href: "/actualites" },
+  { label: "Admissions", href: "/admissions" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const Navbar = () => {
@@ -29,63 +30,43 @@ const Navbar = () => {
       initial={{ y: -40, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? "bg-background/95 backdrop-blur-xl border-b border-foreground/10 shadow-sm"
-          : "bg-background/80 backdrop-blur-md border-b border-foreground/5"
-      }`}
+      className={`fixed inset-x-0 top-0 z-50 border-b transition-all duration-500 ${scrolled ? "border-border bg-background/95 shadow-sm backdrop-blur-xl" : "border-border/70 bg-background/90 backdrop-blur-md"}`}
     >
-      <div className="container mx-auto flex items-center justify-between px-4 h-16 md:h-20">
+      <div className="container mx-auto flex h-20 items-center justify-between px-4 md:h-24">
         <Link to="/" className="flex items-center gap-3 group">
           <img
             src={logoEcsg}
             alt="Logo ECSG"
-            className="h-10 w-10 md:h-11 md:w-11 rounded-full object-cover ring-1 ring-gold/40"
+            className="h-12 w-12 object-contain md:h-14 md:w-14"
           />
-          <div className="hidden sm:flex flex-col leading-none">
-            <span className="font-mono-tag text-[10px] tracking-[0.3em] uppercase text-muted-foreground">
-              Est. 2002 — Lomé
-            </span>
-            <span className="font-fraunces text-lg font-medium tracking-tight mt-1 text-foreground">
-              Sola Gratia<span className="text-gold">.</span>
-            </span>
+          <div className="hidden flex-col leading-none sm:flex">
+            <span className="font-display text-base font-semibold text-foreground md:text-lg">École Chrétienne</span>
+            <span className="mt-1 text-xs font-semibold uppercase text-primary">Sola Gratia · Lomé</span>
           </div>
         </Link>
 
-        <div className="hidden lg:flex items-center gap-1">
+        <div className="hidden items-center gap-1 xl:flex">
           {navLinks.map((link) => {
-            const active = location.pathname === link.href;
+            const active = location.pathname === link.href || (link.href !== "/" && location.pathname.startsWith(link.href));
             return (
-              <Link
-                key={link.href}
-                to={link.href}
-                className={`group px-3 py-2 text-sm transition-colors flex items-baseline gap-1.5 ${
-                  active
-                    ? "text-gold-dark"
-                    : "text-foreground/80 hover:text-foreground"
-                }`}
-              >
-                <span className="font-mono-tag text-[9px] opacity-50">{link.num}</span>
-                <span className="hover-underline">{link.label}</span>
-              </Link>
+              <div key={link.href} className="group relative">
+                <Link to={link.href} className={`flex items-center gap-1 px-3 py-3 text-sm font-semibold transition-colors ${active ? "text-primary" : "text-foreground hover:text-primary"}`}>{link.label}{link.children && <ChevronDown className="h-3.5 w-3.5" />}</Link>
+                {link.children && <div className="invisible absolute left-0 top-full min-w-56 translate-y-2 border border-border bg-background p-2 opacity-0 shadow-editorial transition-all group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">{link.children.map((child) => <Link key={child.href} to={child.href} className="block px-4 py-3 text-sm font-medium hover:bg-muted hover:text-primary">{child.label}</Link>)}</div>}
+              </div>
             );
           })}
-          <a
-            href="tel:+22890071065"
-            className="ml-4 inline-flex items-center gap-2 border border-gold-dark text-gold-dark font-mono-tag text-[11px] uppercase tracking-[0.18em] px-4 py-2.5 rounded-none hover:bg-gold-dark hover:text-primary-foreground transition-colors"
-          >
-            <Phone className="w-3.5 h-3.5" />
-            Inscription →
-          </a>
+          <Button asChild className="ml-3"><Link to="/admissions">Inscrire mon enfant</Link></Button>
         </div>
 
-        <button
+        <Button
+          variant="ghost"
+          size="icon"
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="lg:hidden p-2 text-foreground"
-          aria-label="Menu"
+          className="xl:hidden"
+          aria-label={mobileOpen ? "Fermer le menu" : "Ouvrir le menu"}
         >
           {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
+        </Button>
       </div>
 
       <AnimatePresence>
@@ -94,29 +75,13 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-background border-t border-foreground/10"
+            className="border-t border-border bg-background xl:hidden"
           >
-            <div className="container mx-auto px-4 py-6 flex flex-col">
+            <div className="container mx-auto flex max-h-[calc(100vh-5rem)] flex-col overflow-y-auto px-4 py-5">
               {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  to={link.href}
-                  onClick={() => setMobileOpen(false)}
-                  className={`py-4 border-b border-foreground/10 flex items-baseline justify-between ${
-                    location.pathname === link.href ? "text-gold" : "text-foreground"
-                  }`}
-                >
-                  <span className="font-fraunces text-2xl">{link.label}</span>
-                  <span className="font-mono-tag text-xs opacity-50">{link.num}</span>
-                </Link>
+                <div key={link.href} className="border-b border-border"><Link to={link.href} onClick={() => setMobileOpen(false)} className={`flex items-center justify-between py-4 font-display text-xl font-semibold ${location.pathname.startsWith(link.href) ? "text-primary" : "text-foreground"}`}>{link.label}<ArrowRight className="h-4 w-4" /></Link>{link.children && <div className="grid grid-cols-2 gap-2 pb-4">{link.children.map((child) => <Link key={child.href} to={child.href} onClick={() => setMobileOpen(false)} className="text-sm text-muted-foreground hover:text-primary">{child.label}</Link>)}</div>}</div>
               ))}
-              <a
-                href="tel:+22890071065"
-                className="mt-6 inline-flex items-center justify-center gap-2 bg-foreground text-background font-mono-tag uppercase tracking-[0.2em] text-xs py-4"
-              >
-                <Phone className="w-4 h-4" />
-                +228 90 07 10 65
-              </a>
+              <Button asChild size="lg" className="mt-6"><Link to="/admissions" onClick={() => setMobileOpen(false)}>Inscrire mon enfant</Link></Button>
             </div>
           </motion.div>
         )}
