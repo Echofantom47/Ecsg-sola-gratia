@@ -6,7 +6,7 @@ import { FileCheck2, MessageCircle, Phone } from "lucide-react";
 
 const AdmissionsPage = () => (
   <PageLayout>
-    <PageHero eyebrow="Admissions" title="Préparer l’entrée de votre enfant à Sola Gratia." intro="L’administration vous accompagne pour comprendre les étapes, vérifier les pièces et choisir le cycle adapté." image={authenticImages.afficheEduquer} />
+    <PageHero eyebrow="Admissions" title="Préparer l’entrée de votre enfant à Sola Gratia." intro="L’administration vous accompagne pour comprendre les étapes, vérifier les pièces et choisir le cycle adapté." image={authenticImages.inscriptionPoster} />
     <section className="section-shell">
       <div className="container mx-auto px-4">
         <div className="grid gap-px bg-border md:grid-cols-3">

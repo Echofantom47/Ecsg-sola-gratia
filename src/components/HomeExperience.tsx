@@ -24,7 +24,7 @@ const HomeExperience = () => (
           </div>
         </motion.div>
         <motion.div initial={{ opacity: 0, x: 28 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.85, delay: 0.15 }} className="relative lg:col-span-6">
-          <div className="image-frame ml-auto aspect-[4/5] max-h-[680px] w-full overflow-hidden lg:w-[92%]"><img src={authenticImages.heroCampus} alt="Campus de l’École Chrétienne Sola Gratia" className="h-full w-full object-cover" /></div>
+          <div className="image-frame ml-auto aspect-[4/5] max-h-[680px] w-full overflow-hidden lg:w-[92%]"><img src={authenticImages.campusCourtyard} alt="Bâtiments de l’École Chrétienne Sola Gratia" className="h-full w-full object-cover" /></div>
           <div className="absolute -bottom-6 left-0 max-w-[250px] bg-primary p-6 text-primary-foreground shadow-editorial"><Cross className="h-5 w-5" /><p className="mt-4 font-display text-xl font-semibold">Éduquer pour la gloire de Dieu.</p></div>
         </motion.div>
       </div>
@@ -63,7 +63,7 @@ const HomeExperience = () => (
 
     <section className="section-shell bg-background">
       <div className="container mx-auto grid gap-12 px-4 lg:grid-cols-12 lg:items-center">
-        <motion.div {...reveal} className="lg:col-span-5"><img src={authenticImages.afficheEduquer} alt="Affiche officielle de l’École Chrétienne Sola Gratia" className="w-full object-cover shadow-editorial" /></motion.div>
+        <motion.div {...reveal} className="lg:col-span-5"><img src={authenticImages.rentreePoster} alt="Affiche officielle de la rentrée 2026-2027" className="w-full object-cover shadow-editorial" /></motion.div>
         <motion.div {...reveal} className="lg:col-span-6 lg:col-start-7"><p className="section-label text-primary">Notre histoire</p><h2 className="section-title mt-5">Depuis le 16 septembre 2002.</h2><p className="mt-6 text-lg leading-8 text-muted-foreground">Fondée par {school.founder}, l’École Chrétienne Sola Gratia porte une ambition claire : éduquer pour la gloire de Dieu et former pour la vie.</p><p className="mt-8 border-l-4 border-primary pl-6 font-display text-2xl font-semibold text-primary">{school.motto}</p><Button asChild variant="outline" className="mt-9"><Link to="/ecole">Découvrir l’école <ArrowRight /></Link></Button></motion.div>
       </div>
     </section>
@@ -73,7 +73,7 @@ const HomeExperience = () => (
     </section>
 
     <section className="section-shell bg-background">
-      <div className="container mx-auto px-4"><SectionHeading eyebrow="Vie à Sola Gratia" title="Une communauté en mouvement." intro="Quelques images authentiques de l’établissement et de ses temps forts." /><div className="mt-14 grid grid-cols-12 gap-4"><img src={authenticImages.culturalDay} alt="Journée culturelle à Sola Gratia" className="col-span-12 h-[480px] w-full object-cover md:col-span-8" /><img src={authenticImages.classroom} alt="Vie scolaire à Sola Gratia" className="col-span-12 h-[360px] w-full object-cover md:col-span-4 md:h-[480px]" /></div><Button asChild variant="outline" className="mt-8"><Link to="/galerie">Voir la galerie <ArrowRight /></Link></Button></div>
+      <div className="container mx-auto px-4"><SectionHeading eyebrow="Vie à Sola Gratia" title="Découvrir notre école." intro="Quelques vues authentiques des bâtiments de l’établissement." /><div className="mt-14 grid grid-cols-12 gap-4"><img src={authenticImages.campusEntrance} alt="Entrée d’un bâtiment de Sola Gratia" className="col-span-12 h-[480px] w-full object-cover md:col-span-8" /><img src={authenticImages.campusFacade} alt="Façade de Sola Gratia" className="col-span-12 h-[360px] w-full object-cover md:col-span-4 md:h-[480px]" /></div><Button asChild variant="outline" className="mt-8"><Link to="/galerie">Voir la galerie <ArrowRight /></Link></Button></div>
     </section>
 
     <section className="section-shell bg-muted">
