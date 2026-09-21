@@ -2,14 +2,12 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import culturalDay1 from "@/assets/cultural-day-1.jpg";
-import promoFlyer from "@/assets/promo-flyer.jpeg";
-import classroom from "@/assets/classroom.jpg";
+import { authenticImages } from "@/data/siteContent";
 
 const photos = [
-  { src: culturalDay1, label: "Journée Traditionnelle", tag: "Semaine Culturelle", num: "01" },
-  { src: promoFlyer, label: "Affiche Officielle", tag: "Communication", num: "02" },
-  { src: classroom, label: "Vie de Classe", tag: "Quotidien", num: "03" },
+  { src: authenticImages.campusCourtyard, label: "Bâtiments de l’école", tag: "Campus", num: "01" },
+  { src: authenticImages.rentreePoster, label: "Rentrée 2026–2027", tag: "Communication", num: "02" },
+  { src: authenticImages.campusEntrance, label: "Entrée du bâtiment", tag: "Campus", num: "03" },
 ];
 
 const GallerySection = () => {

@@ -1,16 +1,13 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { ArrowUpRight } from "lucide-react";
-import maternelleImg from "@/assets/maternelle.jpg";
-import primaireImg from "@/assets/primaire.jpg";
-import collegeImg from "@/assets/college.jpg";
-import lyceeImg from "@/assets/lycee.jpg";
+import { authenticImages } from "@/data/siteContent";
 
 const programs = [
-  { num: "I", title: "Maternelle", subtitle: "Éveil & Découverte", image: maternelleImg, description: "Cadre d'éveil chaleureux où nos tout-petits cultivent curiosité, créativité et premiers apprentissages fondamentaux." },
-  { num: "II", title: "Primaire", subtitle: "Fondements", image: primaireImg, description: "Le socle de toute réussite. Lecture, écriture, mathématiques et découverte scientifique acquis avec assurance." },
-  { num: "III", title: "Collège", subtitle: "Préparation BEPC", image: collegeImg, description: "Consolidation des savoirs et préparation méthodique au BEPC. Esprit critique, autonomie, discipline." },
-  { num: "IV", title: "Lycée", subtitle: "Séries A4 · C · D", image: lyceeImg, description: "Parcours abouti en séries A4, C & D. Encadrement rigoureux conduisant à l'excellence au Baccalauréat." },
+  { num: "I", title: "Maternelle", subtitle: "Éveil & Découverte", image: authenticImages.campusEntrance, description: "Cadre d'éveil chaleureux où nos tout-petits cultivent curiosité, créativité et premiers apprentissages fondamentaux." },
+  { num: "II", title: "Primaire", subtitle: "Fondements", image: authenticImages.campusCourtyard, description: "Le socle de toute réussite. Lecture, écriture, mathématiques et découverte scientifique acquis avec assurance." },
+  { num: "III", title: "Collège", subtitle: "Préparation BEPC", image: authenticImages.campusFacade, description: "Consolidation des savoirs et préparation méthodique au BEPC. Esprit critique, autonomie, discipline." },
+  { num: "IV", title: "Lycée", subtitle: "Séries A4 · C · D", image: authenticImages.rentreePoster, description: "Parcours abouti en séries A4, C & D. Encadrement rigoureux conduisant à l'excellence au Baccalauréat." },
 ];
 
 const ProgramsSection = () => {

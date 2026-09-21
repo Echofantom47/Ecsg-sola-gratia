@@ -1,7 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { ArrowDownRight, ArrowUpRight } from "lucide-react";
-import heroCampus from "@/assets/hero-campus.jpg";
+import { authenticImages } from "@/data/siteContent";
 
 const HeroSection = () => {
   const ref = useRef<HTMLDivElement>(null);
@@ -95,7 +95,7 @@ const HeroSection = () => {
           <div className="relative h-[60vh] lg:h-full lg:min-h-[600px] overflow-hidden corner-frame">
             <motion.div style={{ y, scale }} className="absolute inset-0">
               <img
-                src={heroCampus}
+                 src={authenticImages.campusCourtyard}
                 alt="Campus de l'École Chrétienne Sola Gratia"
                 className="w-full h-full object-cover"
               />

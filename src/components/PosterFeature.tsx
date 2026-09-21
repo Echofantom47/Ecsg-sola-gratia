@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import affichePoster from "@/assets/affiche-ecsg.png";
+import { authenticImages } from "@/data/siteContent";
 
 const PosterFeature = () => {
   const ref = useRef(null);
@@ -54,8 +54,8 @@ const PosterFeature = () => {
           >
             <div className="relative shadow-2xl ring-1 ring-gold/30">
               <img
-                src={affichePoster}
-                alt="Affiche officielle École Chrétienne Sola Gratia"
+                src={authenticImages.rentreePoster}
+                alt="Affiche officielle de la rentrée 2026-2027"
                 className="w-full h-auto object-contain"
               />
             </div>
