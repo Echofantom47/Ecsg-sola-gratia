@@ -147,7 +147,7 @@ const AIAssistant = () => {
           content:
             "Notre maternelle accueille les tout-petits dans un cadre chaleureux 👶\nNous éveillons leur curiosité dans un environnement sécurisant et chrétien.",
           actions: [
-            { label: "Voir Programmes", icon: <BookOpen className="w-3.5 h-3.5" />, onClick: () => goTo("/programmes") },
+            { label: "Voir la maternelle", icon: <BookOpen className="w-3.5 h-3.5" />, onClick: () => goTo("/programmes/maternelle") },
             { label: "💬 WhatsApp", icon: <MessageCircle className="w-3.5 h-3.5" />, onClick: openWhatsApp },
           ],
         };
@@ -158,7 +158,7 @@ const AIAssistant = () => {
           content:
             "Le programme primaire vise à développer les compétences fondamentales de l'enfant dans un cadre discipliné et chrétien 🧒\n\nSouhaitez-vous plus de détails ?",
           actions: [
-            { label: "Voir Programmes", icon: <BookOpen className="w-3.5 h-3.5" />, onClick: () => goTo("/programmes") },
+            { label: "Voir le primaire", icon: <BookOpen className="w-3.5 h-3.5" />, onClick: () => goTo("/programmes/primaire") },
             { label: "💬 WhatsApp", icon: <MessageCircle className="w-3.5 h-3.5" />, onClick: openWhatsApp },
           ],
         };
@@ -169,7 +169,7 @@ const AIAssistant = () => {
           content:
             "Notre collège prépare les élèves à l'excellence académique avec un encadrement rigoureux 🎓\n\nDe la 6ème à la 3ème, nous formons des esprits solides.",
           actions: [
-            { label: "Voir Programmes", icon: <BookOpen className="w-3.5 h-3.5" />, onClick: () => goTo("/programmes") },
+            { label: "Voir le collège", icon: <BookOpen className="w-3.5 h-3.5" />, onClick: () => goTo("/programmes/college") },
             { label: "💬 WhatsApp", icon: <MessageCircle className="w-3.5 h-3.5" />, onClick: openWhatsApp },
           ],
         };
@@ -178,7 +178,7 @@ const AIAssistant = () => {
           id,
           role: "bot",
           content:
-            "Vous pouvez contacter l'école directement 📞\n\n• 90 07 10 64\n• 99 60 19 21\n• 91 47 74 56\n\nVoulez-vous discuter directement avec nous ?",
+            "Vous pouvez contacter l'école directement 📞\n\n• 90 07 10 65\n• 91 47 74 56\n\nVoulez-vous discuter directement avec nous ?",
           actions: [
             { label: "💬 WhatsApp", icon: <MessageCircle className="w-3.5 h-3.5" />, onClick: openWhatsApp },
             { label: "📞 Appeler", icon: <Phone className="w-3.5 h-3.5" />, onClick: callSchool },
@@ -202,7 +202,7 @@ const AIAssistant = () => {
           content:
             "Notre école offre une éducation basée sur les valeurs chrétiennes, la discipline et l'excellence ✝️\n\nSouhaitez-vous en savoir plus sur notre vision ?",
           actions: [
-            { label: "À Propos", onClick: () => goTo("/a-propos") },
+            { label: "L’École", onClick: () => goTo("/ecole") },
             { label: "💬 WhatsApp", icon: <MessageCircle className="w-3.5 h-3.5" />, onClick: openWhatsApp },
           ],
         };
