@@ -16,6 +16,7 @@ import LegalPage from "./pages/LegalPage";
 import NotFound from "./pages/NotFound";
 import LoadingScreen from "./components/LoadingScreen";
 import AnimatedBackground from "./components/AnimatedBackground";
+import ScrollManager from "./components/ScrollManager";
 
 const queryClient = new QueryClient();
 
@@ -34,6 +35,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollManager />
         <Routes>
           <Route path="/Ecsg-sola-gratia/*" element={<LegacyGithubRedirect />} />
           <Route path="/" element={<Index />} />
