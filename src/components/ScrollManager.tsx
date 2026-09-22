@@ -47,7 +47,7 @@ const ScrollManager = () => {
       type="button"
       variant="secondary"
       size="icon"
-      className="fixed bottom-5 right-5 z-40 h-14 w-14 rounded-full border border-border bg-background shadow-editorial md:bottom-7 md:right-7"
+      className="fixed bottom-5 left-5 z-40 h-14 w-14 rounded-full border border-border bg-background shadow-editorial md:bottom-7 md:left-7"
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
       aria-label="Retourner en haut de la page"
     >
