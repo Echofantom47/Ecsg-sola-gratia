@@ -1,18 +1,12 @@
-import campusFacadeAsset from "@/assets/campus-facade-1.png.asset.json";
-import campusEntranceAsset from "@/assets/campus-entrance.png.asset.json";
-import campusCourtyardAsset from "@/assets/campus-courtyard.png.asset.json";
-import rentreeAsset from "@/assets/rentree-2026-2027.png.asset.json";
-import inscriptionAsset from "@/assets/inscription-ecsg.jpeg.asset.json";
+import campusFacade from "@/assets/campus-facade-1.webp";
+import campusEntrance from "@/assets/campus-entrance.webp";
+import campusCourtyard from "@/assets/campus-courtyard.webp";
+import rentreePoster from "@/assets/rentree-2026-2027.webp";
+import inscriptionPoster from "@/assets/inscription-ecsg.webp";
 import maternelle from "@/assets/cycle-maternelle.jpg";
 import primaire from "@/assets/cycle-primaire.jpg";
 import college from "@/assets/cycle-college.jpg";
 import lycee from "@/assets/cycle-lycee.jpg";
-
-const campusFacade = campusFacadeAsset.url;
-const campusEntrance = campusEntranceAsset.url;
-const campusCourtyard = campusCourtyardAsset.url;
-const rentreePoster = rentreeAsset.url;
-const inscriptionPoster = inscriptionAsset.url;
 
 export const school = {
   name: "École Chrétienne Sola Gratia",
