@@ -3,6 +3,10 @@ import campusEntranceAsset from "@/assets/campus-entrance.png.asset.json";
 import campusCourtyardAsset from "@/assets/campus-courtyard.png.asset.json";
 import rentreeAsset from "@/assets/rentree-2026-2027.png.asset.json";
 import inscriptionAsset from "@/assets/inscription-ecsg.jpeg.asset.json";
+import maternelle from "@/assets/cycle-maternelle.jpg";
+import primaire from "@/assets/cycle-primaire.jpg";
+import college from "@/assets/cycle-college.jpg";
+import lycee from "@/assets/cycle-lycee.jpg";
 
 const campusFacade = campusFacadeAsset.url;
 const campusEntrance = campusEntranceAsset.url;
@@ -25,10 +29,10 @@ export const school = {
 };
 
 export const cycles = [
-  { slug: "maternelle", title: "Maternelle", kicker: "Éveil et découverte", image: campusEntrance, text: "Un premier cadre d’apprentissage attentif, fondé sur l’éveil, la découverte et les valeurs chrétiennes." },
-  { slug: "primaire", title: "Primaire", kicker: "Fondations solides", image: campusCourtyard, text: "Un enseignement structuré pour développer les connaissances fondamentales, la curiosité et l’autonomie." },
-  { slug: "college", title: "Collège", kicker: "Consolider et grandir", image: campusFacade, text: "Un parcours qui approfondit les savoirs, la méthode, la discipline et la préparation au BEPC." },
-  { slug: "lycee", title: "Lycée", kicker: "Préparer l’avenir", image: rentreePoster, text: "Les séries A4, C et D préparent les élèves au Baccalauréat et à la poursuite de leurs études." },
+  { slug: "maternelle", title: "Maternelle", kicker: "Éveil et découverte", image: maternelle, text: "Un premier cadre d’apprentissage attentif, fondé sur l’éveil, la découverte et les valeurs chrétiennes." },
+  { slug: "primaire", title: "Primaire", kicker: "Fondations solides", image: primaire, text: "Un enseignement structuré pour développer les connaissances fondamentales, la curiosité et l’autonomie." },
+  { slug: "college", title: "Collège", kicker: "Consolider et grandir", image: college, text: "Un parcours qui approfondit les savoirs, la méthode, la discipline et la préparation au BEPC." },
+  { slug: "lycee", title: "Lycée", kicker: "Préparer l’avenir", image: lycee, text: "Les séries A4, C et D préparent les élèves au Baccalauréat et à la poursuite de leurs études." },
 ];
 
 export const values = [
